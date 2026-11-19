@@ -1,0 +1,95 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 109 (printed ١٠٨)."""
+
+PAGE_NUMBER = 109
+PRINTED_PAGE = "١٠٨"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- Main text (matn) ----------------
+    {"type": "matn",
+     "ar": "«فرازنة»، فإنها جمع «فرزين أو فرزان»[[١]] بكسر الفاء.",
+     "en": "…“farāzina,” for it is the plural of “firzīn” or “firzān,” with a kasra on the fāʾ."},
+    {"type": "matn",
+     "ar": "فعلم مما سبق أن صيغة منتهى الجموع على قسمين:",
+     "en": "From what precedes it is known that the pattern of the ultimate plurals is of two kinds:"},
+    {"type": "matn",
+     "ar": "أحدهما: ما يكون بغير هاء.",
+     "en": "the first: that which is without a hāʾ;"},
+    {"type": "matn",
+     "ar": "وثانيهما: ما يكون بهاء.",
+     "en": "and the second: that which is with a hāʾ."},
+    {"type": "matn",
+     "ar": "فأما ما يكون بغير هاء، فممتنع صرفه، لوجود شرط تأثيرها.",
+     "en": "As for that which is without a hāʾ, its declension is prevented, owing to the presence of the condition for its (the pattern’s) taking effect."},
+    {"type": "matn",
+     "ar": "(كمساجد) مثال لما بعد ألفه حرفان.",
+     "en": "(Like masājid) is an example of that after whose alif are two letters."},
+    {"type": "matn",
+     "ar": "(ومصابيح) مثال لما بعد ألفه ثلاثة أحرف أوسطها ساكن.",
+     "en": "(And maṣābīḥ) is an example of that after whose alif are three letters whose middle is quiescent."},
+    {"type": "matn",
+     "ar": "(وأما فرازنة) وأمثالها مما هي على صيغة منتهى الجموع مع الهاء (فمنصرف[[٢]]) لفوات شرط تأثير الجمعية، وهو كونها بلا هاء.",
+     "en": "(As for farāzina) and its likes, which are on the pattern of the ultimate plurals together with the hāʾ, (it is declinable) because of the absence of the condition for the plurality’s taking effect — namely, its being without a hāʾ."},
+    {"type": "matn",
+     "ar": "(وحضاجر علما للضبع[[٣]]) هذا جواب عن سؤال مقدر تقديره أن يقال: إن «حضاجر» علم جنس للضبع، يطلق على الواحد والكثير[[٤]]، كما أن «أسامة» علم جنس للأسد[[٥]]، فلا جمعية فيه،",
+     "en": "(And ḥaḍājir, as a proper name for the hyena) — this is a reply to an implicit question whose purport is that it be said: “ḥaḍājir” is a generic proper name (ʿalam jins) for the hyena, applied to the single one and to the many, just as “usāma” is a generic proper name for the lion; so there is no plurality in it,"},
+    {"type": "matn",
+     "ar": "وصيغة منتهى الجموع ليست من أسباب منع الصرف، بل هي شرط للجمعية[[٦]]، فينبغي[[٧]] أن يكون منصرفا، لكنه غير منصرف.",
+     "en": "and the pattern of the ultimate plurals is not among the causes preventing declension; rather it is [only] a condition for plurality [to take effect]. So it ought to be declinable, yet it is indeclinable."},
+
+    {"type": "rule"},
+
+    # ---------------- Footnotes ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "هو معرب.",
+     "en": "It [firzān] is an Arabicized loanword (muʿarrab)."},
+
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "قيل: ليست «أما» للتفصيل لعدم التعدد، ولا للاستئناف لسبق كلام آخر، إلا أن يقال: الاستئناف لعدم سبق الإجمال.",
+     "en": "It has been said: “ammā” here is not for detailing (tafṣīl), since there is no multiplicity; nor is it for [mere] resumption (istiʾnāf), since another [passage of] speech preceded — unless one says that the resumption is on account of there being no prior summary statement (ijmāl)."},
+    {"type": "pair",
+     "ar": "وإنما لم يقل: «فمنصرفة»؛ لأن المنصرف صار اسما، فيجوز اعتبار اسميته، أو لأن المراد نحو: فرازنة، أو لأن المراد اللفظ، وهذا هو الظاهر.",
+     "en": "He said “fa-munṣarif” [masculine] and not “fa-munṣarifa” [feminine] only because “al-munṣarif” has come to be [used as] a noun, so its nominal status may be taken into account; or because what is meant is “the like of farāzina”; or because what is meant is the wording (al-lafẓ) — and this is the apparent [sense]."},
+    {"type": "pair",
+     "ar": "لا يقال: فعلى هذا يكون غير منصرف بالعلمية والتأنيث، فكيف يصح تنوينه؛ لأنا نقول: تنوينه للمناسبة ومشاكلة المسمى مع أنه يجوز ألا يكون منونا.",
+     "en": "It is not [to be] said: “On this basis it would be indeclinable by reason of proper-namehood and femininity, so how is its taking tanwīn valid?” — because we say: its tanwīn is for concord (munāsaba) and for assimilating [it] to the named thing, and moreover it is permissible for it not to bear tanwīn at all."},
+
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "ليس منصوبا بـ«أعني»؛ لأن المنصوب به لا يخلو عن مدح أو ذم أو ترحم، ولا يستقيم هنا شيء من تلك المعاني،",
+     "en": "“ʿalaman” [in the matn] is not accusative by reason of an implied “aʿnī (I mean),” because that which is made accusative by it must not be devoid of praise, blame, or [an expression of] compassion, and none of those meanings holds good here."},
+    {"type": "pair",
+     "ar": "بل هو منصوب على أنه حال من المستتر في غير منصرف، وجاز أن يتقدم معمول ما أضيف إليه غير إذا كان بمعنى النفي، فإنه حينئذ في قوة «لا»،",
+     "en": "Rather it is accusative as a circumstantial qualifier (ḥāl) of the concealed pronoun in “ghayr munṣarif”; and it is permissible for the governed element of that to which “ghayr” is annexed to be advanced when “ghayr” carries the sense of negation, for then it has the force of “lā.”"},
+    {"type": "pair",
+     "ar": "وجاز فيه ما جاز في «لا» من تقديم معمول المدخول، وزيادة «لا» فيما عطف على المدخول لتأكيد النفي.",
+     "en": "So there is permitted in it what is permitted with “lā” — namely, the advancing of the governed element of the [word] introduced [by it], and the addition of [a redundant] “lā” in what is conjoined to the introduced element, for the emphasis of negation."},
+    {"type": "pair",
+     "ar": "ولا يخفى ما فيه من إيهام أن امتناع صرفه مخصوص بحال العلمية، وليس كذلك لامتناع صرفه حال التنكير أيضا.",
+     "en": "Nor is it hidden what it contains by way of suggesting that its being prevented from declension is peculiar to the state of proper-namehood — which is not so, since it is prevented from declension in the state of indefiniteness (tankīr) as well."},
+    {"type": "pair",
+     "ar": "وفي بعض النسخ: علم بالرفع على أنه خبر مبتدأ محذوف، وينبغي أن يكون الجملة اعتراضية لا حالية، ليخلو الكلام عن ذلك الإيهام.",
+     "en": "In some copies it is “ʿalamun” in the nominative, as the predicate of an elided subject; and [in that case] the sentence ought to be parenthetical (iʿtirāḍiyya), not circumstantial, so that the discourse be free of that [misleading] suggestion."},
+
+    {"type": "note", "num": "٤"},
+    {"type": "pair",
+     "ar": "لكن هذا الإطلاق ليس كإطلاق الجمع، بل على واحد واحد، فهو أيضا ينافي الجمعية.",
+     "en": "But this application [to the many] is not like the application of a plural; rather it is to each single one individually, so it too is contrary to plurality."},
+
+    {"type": "note", "num": "٥"},
+    {"type": "pair",
+     "ar": "فالفرق بين أسد وأسامة أن الأول: اسم جنس موضوع للأفراد، والثاني: علم جنس موضوع للحقيقة.",
+     "en": "The difference between “asad” and “usāma” is that the first is a generic noun (ism jins) coined for the individuals, while the second is a generic proper name (ʿalam jins) coined for the [abstract] essence (ḥaqīqa)."},
+
+    {"type": "note", "num": "٦"},
+    {"type": "pair",
+     "ar": "أي: فلا بد من الجمعية أيضا؛ إذ لا فائدة في وجود الشرط بدون المشروط.",
+     "en": "That is: plurality too is indispensable, since there is no benefit in the presence of the condition without the conditioned thing."},
+
+    {"type": "note", "num": "٧"},
+    {"type": "pair",
+     "ar": "تفريع على قوله: فلا جمعية فيه بالنظر إلى انتفاء سائر الأسباب فيه.",
+     "en": "[This is] a corollary drawn from his words “so there is no plurality in it,” in view of the absence of the other causes [of indeclinability] in it."},
+]

@@ -1,0 +1,93 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 272 (printed ٢٧١)."""
+
+PAGE_NUMBER = 272
+PRINTED_PAGE = "٢٧١"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    {"type": "matn",
+     "ar": "(و«زيد طيب أبا») مثال لما يشبه الجملة، والتمييز فيه يصلح أن يكون لما انتصب عنه ولمتعلقه،",
+     "en": "(And “Zayd is good in respect of father”): an example of what resembles the sentence; the specification in it may belong either to that from which it takes the accusative or to what is connected with it."},
+    {"type": "matn",
+     "ar": "وحيث لا فرق في التمييز بين الجملة وما ضاهاها، فهذان المثالان في قوة أربعة أمثلة، فكأنه قال: «طاب زيد نفسا، وزيد طيب نفسا وأبا».",
+     "en": "Since there is no difference in specification between the sentence and what resembles it, these two examples have the force of four examples; it is as if he said: “Zayd is good in soul, and Zayd is good in soul and in respect of father.”"},
+    {"type": "matn",
+     "ar": "وقوله: (و«أبوة ودارا وعلما») عطف على «نفسا وأبا» بحسب المعنى، فهو ناظر إلى كل من المثالين المذكورين غير مختص بالأخير،",
+     "en": "His words (and “in fatherhood, and in house, and in knowledge”) are coordinated with “in soul and in respect of father” according to the sense; so they look to each of the two examples mentioned and are not particular to the last."},
+    {"type": "matn",
+     "ar": "فهو بحسب الحقيقة أورد لكل من التمييز الواقع في الجملة أو ما ضاهاها خمسة أمثلة،",
+     "en": "So in reality he has given five examples for each of the specification occurring in the sentence and in what resembles it."},
+    {"type": "matn",
+     "ar": "فالنفس عين غير إضافي خاص بالمنتصب عنه، والدار عين غير إضافي، وهو متعلق بالمنتصب عنه،",
+     "en": "“Soul” is a non-relational concrete thing (ʿayn), particular to that from which it takes the accusative; “house” is a non-relational concrete thing, and it is connected with that from which it takes the accusative;"},
+    {"type": "matn",
+     "ar": "والأب عين إضافي محتمل لهما، والأبوة عرض إضافي، والعلم عرض غير إضافي، وكل واحد منهما متعلق بالمنتصب عنه.",
+     "en": "“father” is a relational concrete thing, admitting both; “fatherhood” is a relational accident (ʿaraḍ), and “knowledge” is a non-relational accident, each of them being connected with that from which it takes the accusative."},
+    {"type": "matn",
+     "ar": "(أو في إضافة) عطف على قوله: «في جملة أو ما ضاهاها» (مثل: «يعجبني طيبه نفسا»)، وتركه؛ لأنه أظهر التمييزات ولا خفاء به",
+     "en": "(Or in a genitive construction) is coordinated with his words “in a sentence or what resembles it”; (as in “His goodness in soul pleases me”). He left it aside because it is the plainest of the specifications and there is no obscurity about it."},
+    {"type": "matn",
+     "ar": "(«أبا، وأبوة، ودارا، وعلما») أورد هذه الأمثلة على وفق ما سبق،",
+     "en": "(“In respect of father, and fatherhood, and house, and knowledge”): he gave these examples in keeping with what preceded,"},
+    {"type": "matn",
+     "ar": "وزاد عليه قوله: (و«لله دره فارسا») إشارة إلى أن التمييز قد يكون صفة مشتقة،",
+     "en": "and added to it his words (and “To Allah [belongs] his milk as a horseman!” [i.e. how excellent a horseman he is]), to indicate that the specification may be a derived adjective;"},
+    {"type": "matn",
+     "ar": "وأيضا لما أورده صاحب المفصل مثالا لتمييز المفرد على أن يكون الضمير فيه مبهما كضمير «ربه رجلا» ويكون «فارسا» تمييزا عنه",
+     "en": "and also, since the author of al-Mufaṣṣal gave it as an example of the specification of a single word, on the view that the pronoun in it is indefinite, like the pronoun of “rubbahu rajulan” (many a man), with “as a horseman” being a specification of it,"},
+    {"type": "matn",
+     "ar": "أراد أن ينبه على أنه يصلح أن يكون تمييزا عن نسبة على أن يكون الضمير معينا معلوما، والإبهام يكون في نسبة الدر إليه،",
+     "en": "he wished to point out that it can be a specification of a relation, on the view that the pronoun is definite and known, the indefiniteness lying in the attribution of the milk to him."},
+    {"type": "matn",
+     "ar": "والدر في الأصل: اللبن[[١]]، وفيه خير كثير للعرب، فأريد به الخير أي: لله خيره فارسا،",
+     "en": "Durr is originally milk, in which there is much good for the Arabs; so “good” is meant by it, that is: “To Allah [belongs] his good as a horseman.”"},
+    {"type": "matn",
+     "ar": "والفارس: اسم فاعل من الفراسة -بالفتح- مصدر «فرس» بالضم أي: حذق بأمر الخيل، وأما الفراسة بالكسر فمن التفرس.",
+     "en": "Fāris is an active participle from farāsa—with fatḥa—the verbal noun of farusa, with ḍamma, that is: he became skilled in the matter of horses; as for firāsa, with kasra, it is from tafarrus (perceptive discernment)."},
+    # REVIEW: print reads «في المنتصف عنه» (sense requires «المنتصب»); transcribed as printed.
+    {"type": "matn",
+     "ar": "(ثم إن كان) أي: التمييز بعد ما لم يكن نصا في المنتصف عنه (اسما) لا صفة",
+     "en": "(Then, if it is)—that is, the specification, provided it is not explicitly [restricted] to that from which it takes the accusative—(a noun), not an adjective,"},
+    {"type": "matn",
+     "ar": "(يصح[[٢]] جعله لما انتصب عنه) والمراد بجعله له إطلاقه عليه[[٣]]، والتعبير به عنه (جاز",
+     "en": "(which can properly be made to refer to that from which it takes the accusative)—what is meant by making it refer to it is applying it to it and expressing it by it—(it is permissible…"},
+
+    {"type": "rule"},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "قال الشيخ الرضي: الدر في الأصل ما يدر، أي: ما ينزل من الضرع من اللبن، ومن الغيم من المطر.",
+     "en": "Shaykh al-Raḍī said: durr is originally what flows, that is, the milk that comes down from the udder, and the rain from the clouds."},
+    {"type": "pair",
+     "ar": "وهو ههنا كناية عن فعل الممدوح الصادر عنه.",
+     "en": "Here it is a metonymy (kināya) for the deed of the one praised that issues from him."},
+    {"type": "pair",
+     "ar": "وإنما نسب فعله إليه تعالى قصدا للتعجب منه؛ لأن الله تعالى منشيء العجائب،",
+     "en": "His deed is attributed to Him, the Exalted, only to express wonder at it, because Allah, the Exalted, is the originator of wonders;"},
+    {"type": "pair",
+     "ar": "فكل شيء عظيم يريدون التعجب منه، ينسبونه إليه تعالى، ويضيفونه إليه، فمعنى لله دره: ما أعجب فعله.",
+     "en": "so every great thing at which they wish to express wonder they attribute to Him, the Exalted, and annex to Him. Thus the meaning of “lillāhi durruhu” is: how wondrous his deed is!"},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "إلى قوله: وإلا فهو لمتعلقه.",
+     "en": "[From here] up to his words: “otherwise it belongs to what is connected with it.”"},
+    {"type": "pair",
+     "ar": "في هذه العبارة شبهة مشهورة، وهي انتقاض الشرطية الأولى بـ«طاب زيد نفسا»، فإن «نفسا» اسم يصح جعله لما انتصب عنه، ولا يصح أن يكون لمتعلقه.",
+     "en": "There is a well-known difficulty in this wording: the first conditional is refuted by “Zayd is good in soul,” for “soul” is a noun that can properly be made to refer to that from which it takes the accusative, yet it cannot belong to what is connected with it."},
+    {"type": "pair",
+     "ar": "وأجاب قدس سره بتقييد مقدمها بكون التمييز نصا فيما انتصب عنه.",
+     "en": "He—may his secret be sanctified—answered by restricting its antecedent to the specification's being explicitly [restricted] to that from which it takes the accusative."},
+    {"type": "pair",
+     "ar": "وكذا قيد بمقدم الشرطية الثانية بذلك، لئلا ينتقض بمثل: «طاب زيد نفسا».",
+     "en": "Likewise he restricted the antecedent of the second conditional by this, so that it is not refuted by such cases as “Zayd is good in soul.”"},
+
+    # ---------------- Footnote 3 ----------------
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "جعل الشيخ الرضي صفات الشيء كالعلم من قبيل ما يصح جعلها لما انتصب عنه.",
+     "en": "Shaykh al-Raḍī counted the attributes of a thing, such as knowledge, among what can properly be made to refer to that from which it takes the accusative."},
+]

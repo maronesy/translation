@@ -1,0 +1,106 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 155 (printed ١٥٤)."""
+
+PAGE_NUMBER = 155
+PRINTED_PAGE = "١٥٤"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    {"type": "matn",
+     "ar": "فاعلها يسد مسد الخبر، وكون ما بعدها مبتدأ، والصفة خبرا مقدما عليه.",
+     "en": "…its agent filling the place of the khabar; and what follows it being a mubtadaʾ, with the adjective a khabar fronted before it."},
+    {"type": "matn",
+     "ar": "فهنا ثلاث صور:",
+     "en": "So there are three cases here:"},
+    {"type": "matn",
+     "ar": "إحداها: «أقائمان الزيدان»، ويتعين حينئذ أن يكون «الزيدان» مبتدأ، و«أقائمان» خبرا مقدما عليه.",
+     "en": "The first: “a-qāʾimāni al-Zaydāni”; here “al-Zaydāni” must be the mubtadaʾ, and “a-qāʾimāni” a khabar fronted before it."},
+    {"type": "matn",
+     "ar": "وثانيها: «أقائم الزيدان»، ويتعين حينئذ أن يكون «الزيدان» فاعلا للصفة قائما مقام الخبر.",
+     "en": "The second: “a-qāʾimun al-Zaydāni”; here “al-Zaydāni” must be the agent of the adjective, standing in the place of the khabar."},
+    {"type": "matn",
+     "ar": "وثالثها: «أقائم زيد»، ويجوز فيه الأمران، كما عرفت.",
+     "en": "The third: “a-qāʾimun Zaydun”; both options are permissible in it, as you have learned."},
+    {"type": "matn",
+     "ar": "(والخبر: هو المجرد[[١]]) أي: هو الاسم المجرد عن العوامل اللفظية؛ لأن الكلام في مرفوعات الاسم،",
+     "en": "(And the khabar is the stripped—wa-l-khabaru huwa al-mujarradu), that is: it is the noun stripped of overt governors; because the discussion is about the nominatives of the noun;"},
+    {"type": "matn",
+     "ar": "فلا يصدق على «يضرب» في «يضرب زيد»[[٢]]: أنه المجرد المسند به المغاير للصفة المذكورة؛ لأنه ليس باسم",
+     "en": "so it is not true of “yaḍribu” in “yaḍribu Zaydun” (Zayd strikes) that it is the stripped [element], predicated, other than the aforementioned adjective, because it is not a noun;"},
+    {"type": "matn",
+     "ar": "(المسند به) أي: ما يوقع به الإسناد[[٣]].",
+     "en": "(Predicated—al-musnadu bihi), that is: that by which predication is effected."},
+    {"type": "matn",
+     "ar": "واحترز به عن القسم الأول من المبتدأ؛ لأنه مسند إليه لا مسند به.",
+     "en": "By it he excluded the first kind of mubtadaʾ, because it is a subject of predication (musnad ilayhi), not a predicate (musnad bihi)."},
+    {"type": "matn",
+     "ar": "(المغاير للصفة المذكورة) في تعريف المبتدأ.",
+     "en": "(Other than the aforementioned adjective—al-mughāyiru li-l-ṣifati al-madhkūrati) in the definition of the mubtadaʾ."},
+
+    {"type": "rule"},
+
+    # -------- continuation of footnote ٦ from the previous page (printed ١٥٣) --------
+    {"type": "note", "num": "…"},
+    {"type": "pair",
+     "ar": "الاختفاء، فيجوز الأمران.",
+     "en": "…concealment (kulla al-ikhtifāʾ); so both options are permissible."},
+    {"type": "pair",
+     "ar": "يقول العصام: لا ضرورة في تقديم الخبر في «زيد قام» حتى يرتكب الالتباس لأجلها،",
+     "en": "al-ʿIṣām says: there is no necessity for fronting the khabar in “Zaydun qāma” such that the confusion would be incurred for its sake;"},
+    {"type": "pair",
+     "ar": "وفي «أقائم زيد؟» يجب تقديم «قائم» لتضمن الاستفهام وتعلق الاستفهام به، والمشتمل على الاستفهام يجب تقديمه.",
+     "en": "whereas in “a-qāʾimun Zaydun?” fronting “qāʾim” is obligatory because it contains the interrogation and the interrogation attaches to it, and what contains an interrogation must be fronted."},
+    {"type": "pair",
+     "ar": "لا تقول: فالضرورة قائمة في «أقام زيد؟».",
+     "en": "You do not say: then the necessity obtains in “a-qāma Zaydun?” (Did Zayd stand?)."},
+    {"type": "pair",
+     "ar": "قلت: لا ضرورة لجواز «زيد أقام؟» بخلاف «زيد أقائم؟» فتأمل.",
+     "en": "I say: there is no necessity, because “Zaydun a-qāma?” is permissible, unlike “Zaydun a-qāʾimun?”—so reflect."},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "أي: المعهود، أعني: المجرد عن العوامل، فيخرج نحو الفاعل.",
+     "en": "That is: the one already known, I mean: the [noun] stripped of governors; so the like of the agent is excluded."},
+    {"type": "pair",
+     "ar": "قال عبد الغفور: ولك أن تقول أي: هو المرفوع المجرد إلى آخره؛ لأنه ذاكر أقسام المرفوع،",
+     "en": "ʿAbd al-Ghafūr said: you may also say, that is: “it is the nominative stripped…” to the end, since he is enumerating the kinds of nominative;"},
+    {"type": "pair",
+     "ar": "فلا يصدق التعريف على «يضرب» في «يضرب زيد»؛ لأنه ليس مرفوعا بالمعنى المذكور.",
+     "en": "so the definition is not true of “yaḍribu” in “yaḍribu Zaydun,” because it is not a nominative in the sense mentioned."},
+    {"type": "pair",
+     "ar": "وهذا الوجه أسلم من تقدير الاسم؛",
+     "en": "This approach is sounder than supposing [the word] “noun”;"},
+    {"type": "pair",
+     "ar": "لأن المراد به إن كان الاسم حقيقة خرج عنه بعض الأخبار، وهو ما إذا كان مركبا أو لفظا يراد به نفسه كالجسق وضرب ومن،",
+     "en": "because if what is meant by it is a noun in the literal sense, some predicates are excluded from it, namely where it is a compound or a word by which its own self is meant, like “jasaq,” “ḍaraba” and “min”;"},
+    {"type": "pair",
+     "ar": "وإن كان الاسم حقيقة أو حكما دخل فيه المثال المذكور والجملة أيضا مع أنه مصرح بخلافه،",
+     "en": "and if it is a noun literally or by legal status (ḥukman), the example mentioned enters it, and the sentence as well, although the contrary of that is stated explicitly;"},
+    {"type": "pair",
+     "ar": "وذلك لصحة التعبير عنها بالاسم.",
+     "en": "that is because it is valid to express it by a noun."},
+    {"type": "pair",
+     "ar": "ويمكن أن يقال: إن المثال المذكور لا يصح التعبير عنه بالاسم مع بقاء ربطه،",
+     "en": "It may be said: the example mentioned cannot validly be expressed by a noun while its connection remains;"},
+    {"type": "pair",
+     "ar": "فإن ربط «يضرب» إلى «زيد» ليس بمعنى هو هو، وربط الاسم الذي أقيم مقامه على «زيد» بمعنى هو هو.",
+     "en": "for the connection of “yaḍribu” to “Zayd” is not in the sense of identity (huwa huwa), whereas the connection of the noun set in its place to “Zayd” is in the sense of identity."},
+    {"type": "pair",
+     "ar": "نعم بقي أمر الجملة، اللهم إلا أن يراد بالاسم الحكمي لفظ يعد واحدا، ويصح التعبير عنه بالاسم.",
+     "en": "Yes, the matter of the sentence remains—O God, unless by the noun-by-status (al-ism al-ḥukmī) is meant an expression counted as one and validly expressible by a noun."},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "وكذا لا يصدق على «يضرب» في «زيد يضرب».",
+     "en": "Likewise it is not true of “yaḍribu” in “Zaydun yaḍribu” (Zayd strikes)."},
+
+    # ---------------- Footnote 3 ----------------
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "قد أشار به إلى أن الباء متعلقة بالإيقاع المضمن لا بالإسناد؛ لأنه بنفسه يتعلق بالمسند، فلا حاجة إلى الباء.",
+     "en": "By it he indicated that the bāʾ is connected with the implied [notion of] effecting (īqāʿ), not with predication (isnād); because [predication] attaches to the predicate by itself, so there is no need for the bāʾ."},
+]
+# Count check: 3 matn markers vs 4 note blocks; the extra note ("…") is the
+# continuation of footnote ٦ from p.154 (printed ١٥٣), following page_139.py.

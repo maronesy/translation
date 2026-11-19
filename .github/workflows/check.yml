@@ -1,0 +1,54 @@
+# Runs on every pull request: checks every book, then builds a preview of the
+# changed pages and attaches it to the run (Checks tab → Artifacts).
+name: Check pages
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    name: Check pages
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Check every book
+        run: |
+          status=0
+          for b in books/*/; do
+            case "$b" in books/_*) continue ;; esac
+            python engine/check_page.py "$b" || status=1
+          done
+          exit $status
+
+  preview:
+    name: Build preview
+    needs: check
+    if: github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Build changed pages
+        run: python engine/ci_preview.py "origin/${{ github.base_ref }}"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: preview
+          path: |
+            books/*/build/*.pdf
+            books/*/build/*.docx
+          if-no-files-found: ignore
+          retention-days: 30

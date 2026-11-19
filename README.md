@@ -1,0 +1,205 @@
+# Alkalam Open Translations
+
+Arabic–English translations of classical Islamic texts, edited in the open.
+Each book is translated sentence by sentence: the Arabic as printed in a named
+edition, with the English beneath it, for both the main text (*matn*) and its
+glosses (*ḥawāshī*). Anyone can download the books, report a mistake, correct
+it, or propose a new book. Maintainers review and approve every change.
+
+## Books
+
+| Book | Author | Status | Pages |
+|---|---|---|---|
+| [al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)](books/mulla-jami/) | ʿAbd al-Raḥmān al-Jāmī (d. 898/1492) | complete | book pp. ٢٣–٥٩٩ |
+
+## Download
+
+Get the books from the [Releases page](https://github.com/OWNER/REPO/releases/latest).
+Every release has three files for each book:
+
+| File | What it is |
+|---|---|
+| `<Book>_Manuscript.pdf` | A3 "manuscript" edition: the matn in a ruled central frame, the ḥawāshī (Arabic and English) set around it in the margins. Each sheet shows its PDF page number and, in brackets, the page of the printed edition. |
+| `<Book>_Translation.docx` | Linear Word edition: each Arabic sentence followed by its English. |
+| `<Book>_Review-Notes.md` | Places where the printed edition looks misprinted or a reading is uncertain, keyed to that release's PDF pages. |
+
+A new release is published automatically each time a change is merged. The
+links always point to the latest one.
+
+## How the project works
+
+```mermaid
+flowchart LR
+    A[Reader finds a mistake] -->|opens a Correction issue| B[Maintainer checks it]
+    B -->|comments @claude| C[Claude prepares the fix on a branch]
+    D[Contributor fixes it directly] -->|pull request| E
+    C -->|maintainer opens the PR| E[Pull request]
+    E --> F{Checks pass and a<br/>maintainer approves?}
+    F -->|yes| G[Merged into main]
+    F -->|no| H[Changes requested]
+    H --> E
+    G --> I[New release built automatically]
+```
+
+- **`main` is protected.** Nothing reaches it except through a pull request
+  that passes the automatic checks and is approved by a maintainer.
+- **Maintainers** are the people with write access to this repository. Only
+  they can approve and merge pull requests, and only they can ask Claude to
+  prepare a fix.
+- **Claude** (Anthropic's AI model, through the
+  [Claude GitHub Action](https://github.com/anthropics/claude-code-action))
+  drafts fixes when a maintainer asks. Its work goes through the same pull
+  request and approval as anyone else's.
+- **Checks** run on every pull request: every page file must load, its
+  footnote markers must match its footnotes, and the Arabic must follow the
+  book's rules (for example, no diacritics). A preview PDF of each changed
+  book is attached to the pull request's checks.
+
+## Report a mistake (no git needed)
+
+1. Open a new issue and choose **Translation correction**
+   ([direct link](https://github.com/OWNER/REPO/issues/new?template=correction.yml)).
+2. Fill in every field:
+   - **Book**, and the **book page** printed on the sheet in brackets, e.g.
+     `book p. ٣٠٥` (the PDF page alone is not enough, because it changes
+     between releases);
+   - **Where**: matn, or footnote number;
+   - **What is wrong**: copy the current Arabic and/or English;
+   - **Correction**: what it should say, and why;
+   - **Photo of the printed page** if the Arabic transcription is in question.
+     Arabic is only changed against the printed text, never from memory.
+3. A maintainer reads the report. If it is right, they comment `@claude fix this`
+   on the issue. Claude edits the page file, runs the checks, pushes a branch
+   and replies with a link to open the pull request.
+4. The maintainer opens that pull request, reviews it against the preview PDF,
+   and approves and merges it. The issue closes automatically and the next
+   release includes the fix.
+
+If the report is not right, the maintainer explains why and closes the issue.
+
+## Fix a mistake yourself (pull request)
+
+1. **Fork** this repository on GitHub, then clone your fork:
+   ```sh
+   git clone https://github.com/<you>/REPO.git
+   cd REPO
+   pip install -r requirements.txt
+   ```
+2. **Create a branch** named `fix/<book>-p<book page>-<short-description>`:
+   ```sh
+   git switch -c fix/mulla-jami-p305-yastamil
+   ```
+3. **Find the page file.** Pages are stored by the page number of the scanned
+   PDF of the edition: *scan page = book page + `pdf_offset`* (in the book's
+   `book.toml`; it is 1 for Mullā Jāmī). Book page ٣٠٥ is therefore
+   `books/mulla-jami/pages/page_306.py`.
+4. **Edit only the blocks that are wrong.** Follow
+   [docs/TRANSLATION-GUIDE.md](docs/TRANSLATION-GUIDE.md). In particular:
+   - transcribe the Arabic exactly as printed; if the print itself looks wrong,
+     keep it and add a `# REVIEW: …` comment above the block;
+   - no diacritics in books whose `book.toml` says `diacritics = false`;
+   - keep the `[[N]]` footnote markers and the `note` blocks in step.
+5. **Run the checks** (and, if you like, build the book):
+   ```sh
+   python engine/check_page.py books/mulla-jami 306
+   python engine/build_manuscript.py books/mulla-jami 306   # one-page preview PDF
+   ```
+6. **Commit** with a message of the form `<book>: book p.<page> <where> — <what>`:
+   ```sh
+   git commit -am "mulla-jami: book p.305 fn 6 — restore printed «يتسعمل», add REVIEW note"
+   git push -u origin fix/mulla-jami-p305-yastamil
+   ```
+7. **Open a pull request** against `main`. Fill in the template, and link the
+   issue it fixes (`Fixes #123`) if there is one.
+8. A maintainer reviews it. Answer any requested changes by pushing more
+   commits to the same branch. Once the checks pass and a maintainer approves,
+   it is merged.
+
+## Propose a new book
+
+1. **Open a proposal issue** — choose **New book proposal**
+   ([direct link](https://github.com/OWNER/REPO/issues/new?template=new-book.yml)).
+   Give the title, author, the exact printed edition (publisher, year, ISBN)
+   you will follow, the rights situation of that edition, and who will
+   translate. Maintainers reply, and label the issue `book-accepted` if the
+   project takes it on. Wait for this before doing a lot of work.
+2. **Create a branch** named `book/<slug>`, where `<slug>` is a short
+   lowercase name (e.g. `book/sharh-al-aqaid`), and copy the template:
+   ```sh
+   git switch -c book/sharh-al-aqaid
+   cp -r books/_template books/sharh-al-aqaid
+   ```
+3. **Fill in `books/<slug>/book.toml`** (see [docs/NEW-BOOK.md](docs/NEW-BOOK.md))
+   and `books/<slug>/README.md`.
+4. **Put your own scan** of the edition at the path given by `local_scan`
+   (inside `books/<slug>/source/`). It is git-ignored: **never commit scans.**
+5. **Translate sample pages** — at least five consecutive pages, or the whole
+   book — one file per scan page in `books/<slug>/pages/`, following
+   [docs/TRANSLATION-GUIDE.md](docs/TRANSLATION-GUIDE.md). Check and build:
+   ```sh
+   python engine/check_page.py books/sharh-al-aqaid
+   python engine/build_manuscript.py books/sharh-al-aqaid
+   ```
+6. **Open a pull request** titled `New book: <title>` and link the proposal
+   issue. The checks attach a preview PDF. Maintainers review the sample
+   against the edition; once approved and merged, the book appears in the next
+   release with status `proposal` or `in-progress`.
+7. **Continue in batches.** Translate further pages on branches named
+   `book/<slug>-pp<first>-<last>` and open one pull request per batch.
+   Set `status = "complete"` in the pull request that finishes the book.
+
+## Working locally
+
+You need Python 3.11 or later, Google Chrome or Chromium (for the PDF), and
+— only if you read a scan with the high-resolution tool — poppler's `pdftoppm`.
+
+```sh
+pip install -r requirements.txt
+python engine/check_page.py books/mulla-jami            # check every page
+python engine/build_docx.py books/mulla-jami            # → books/mulla-jami/build/*.docx
+python engine/build_manuscript.py books/mulla-jami      # → books/mulla-jami/build/*.pdf
+python engine/hires_page.py books/mulla-jami 306        # render a scan page in readable bands
+```
+
+Add page numbers to build only part of a book (e.g. `… books/mulla-jami 300 301 302`).
+If Chrome is not found, set `CHROME=/path/to/chrome`.
+
+## Repository layout
+
+```
+books/
+  _template/              copy this to start a new book
+  mulla-jami/
+    book.toml             titles, edition, page range, rules
+    README.md             about this book and its edition
+    REVIEW-NOTES.md       readings to check against the print (book pages)
+    pages/page_NNN.py     one file per scan page: Arabic + English blocks
+    source/               your own scan goes here (git-ignored)
+    build/                built files (git-ignored)
+engine/                   build and check scripts, page template, fonts
+docs/                     translation guide, new-book guide, maintainer guide
+.github/                  issue forms, pull-request template, workflows
+CLAUDE.md                 instructions Claude follows in this repository
+```
+
+## Sources and rights
+
+This repository contains **no scans**. Each book names the printed edition it
+follows; contributors work from their own copies. The classical texts are in
+the public domain; a modern edition's own contributions — its typesetting,
+notes, and the selection and arrangement of glosses — may belong to its
+publisher. If you hold rights in an edition used here and object to material
+in this repository, open an issue or contact the maintainers and we will
+remove it.
+
+## License
+
+- Translations and transcriptions (`books/`):
+  [CC BY-SA 4.0](LICENSE-CONTENT.md). Reuse them with credit; share
+  adaptations under the same license.
+- Code (`engine/`, `.github/`): [MIT](LICENSE).
+- Fonts (`engine/fonts/`): SIL Open Font License 1.1 — see
+  [engine/fonts/README.md](engine/fonts/README.md).
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for the review rules, and
+[docs/MAINTAINERS.md](docs/MAINTAINERS.md) for repository setup.

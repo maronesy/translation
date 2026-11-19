@@ -1,0 +1,65 @@
+name: Translation correction
+description: Report a mistake in the Arabic transcription or the English translation.
+title: "[correction] <book> book p.<page> — <short description>"
+labels: [correction]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you. Please fill in every field. The **book page** is the number printed in brackets at the foot of each PDF sheet, e.g. `(book p. ٣٠٥)`. The PDF page alone is not enough, because it changes between releases.
+  - type: dropdown
+    id: book
+    attributes:
+      label: Book
+      options:
+        - mulla-jami — al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)
+    validations:
+      required: true
+  - type: input
+    id: page
+    attributes:
+      label: Book page
+      description: As printed in brackets on the sheet, e.g. ٣٠٥ (Western digits are fine too).
+    validations:
+      required: true
+  - type: input
+    id: where
+    attributes:
+      label: Where on the page
+      description: "e.g. matn, 3rd sentence · footnote ٦ · section heading"
+    validations:
+      required: true
+  - type: dropdown
+    id: kind
+    attributes:
+      label: What kind of mistake
+      options:
+        - English translation
+        - Arabic transcription (differs from the printed edition)
+        - Both
+        - Layout / other
+    validations:
+      required: true
+  - type: textarea
+    id: current
+    attributes:
+      label: What it says now
+      description: Copy the current Arabic and/or English.
+    validations:
+      required: true
+  - type: textarea
+    id: proposed
+    attributes:
+      label: What it should say, and why
+    validations:
+      required: true
+  - type: textarea
+    id: photo
+    attributes:
+      label: Photo of the printed page
+      description: Required for Arabic transcription corrections — drag an image of the printed passage here. The Arabic is only changed against the printed text.
+  - type: input
+    id: release
+    attributes:
+      label: Release you were reading (optional)
+      description: e.g. Build 12

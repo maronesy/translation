@@ -1,0 +1,106 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 426 (printed ٤٢٥)."""
+
+PAGE_NUMBER = 426
+PRINTED_PAGE = "٤٢٥"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    # PDF p. 425 ends with a complete sentence («(اثنتا عشرة كلمة: واحد إلى عشرة، ومائة، وألف).»).
+    {"type": "matn",
+     "ar": "(تقول) في الأعداد مذكرة، ومؤنثة، ومفردة، ومركبة، ومعطوفة: (واحد، واثنان[[١]]) في المفرد المذكر، وتثنيته",
+     "en": "(You say), for numbers—masculine and feminine, simple, compound and coordinated: (wāḥid, ithnān) for the masculine singular and its dual,"},
+    {"type": "matn",
+     "ar": "(واحدة، اثنتان، وثنتان[[٢]]) في المفرد المؤنث وتثنيتها على ما هو القياس.",
+     "en": "(wāḥida, ithnatān and thintān) for the feminine singular and its dual, according to the regular analogy (qiyās)."},
+    {"type": "matn",
+     "ar": "(و) تقول في المذكر (ثلاثة إلى عشرة بالتاء) لجماعة المذكر اعتبارا لتأنيث الجماعة، نحو: «ثلاثة رجال إلى عشرة رجال»",
+     "en": "(And) you say for the masculine (thalātha to ʿashara with the tāʾ), for a group of masculines, with regard to the femininity of the group, as in “thalāthatu rijālin” (three men) to “ʿasharatu rijālin” (ten men);"},
+    {"type": "matn",
+     "ar": "(وثلاث إلى عشر بدونها) لجمع المؤنث فرقا بين المذكر والمؤنث، نحو: «ثلاث نسوة، وعشر نسوة»،",
+     "en": "(and thalāth to ʿashr without it) for a feminine plural, to distinguish between masculine and feminine, as in “thalāthu niswatin” (three women) and “ʿashru niswatin” (ten women)."},
+    {"type": "matn",
+     "ar": "ولم يفعل الأمر بالعكس لكون المذكر أسبق.",
+     "en": "The matter was not done the other way round because the masculine is prior."},
+    {"type": "matn",
+     "ar": "وتقول إذا جاوزت عشرا («أحد عشر»[[٣]]، «اثني عشر») في المذكر، نحو: «أحد عشر رجلا»",
+     "en": "When you go beyond ten, you say (“aḥada ʿashara”, “ithnay ʿashara”) for the masculine, as in “aḥada ʿashara rajulan” (eleven men),"},
+    {"type": "matn",
+     "ar": "(«إحدى عشرة»، و«اثنتا عشرة»، و«ثنتا عشرة») في المؤنث، نحو: «إحدى عشرة امرأة» على الأصل بتذكير المذكر وتأنيث المؤنث،",
+     "en": "(“iḥdā ʿashrata”, “ithnatā ʿashrata” and “thintā ʿashrata”) for the feminine, as in “iḥdā ʿashrata imraʾatan” (eleven women), according to the original rule: the masculine for the masculine and the feminine for the feminine."},
+    {"type": "matn",
+     "ar": "وغير «الواحد» إلى «أحد»، و«الواحدة» إلى «إحدى» للتخفيف.",
+     "en": "“Wāḥid” was changed to “aḥad”, and “wāḥida” to “iḥdā”, for lightness."},
+    {"type": "matn",
+     "ar": "(و) تقول: (ثلاثة عشر إلى تسعة عشر) في المذكر نحو: «ثلاثة عشر رجلا»",
+     "en": "(And) you say (thalāthata ʿashara to tisʿata ʿashara) for the masculine, as in “thalāthata ʿashara rajulan” (thirteen men),"},
+    {"type": "matn",
+     "ar": "(ثلاث عشرة إلى تسع عشرة) في المؤنث نحو: «ثلاث عشرة امرأة»",
+     "en": "(thalātha ʿashrata to tisʿa ʿashrata) for the feminine, as in “thalātha ʿashrata imraʾatan” (thirteen women),"},
+    {"type": "matn",
+     "ar": "إبقاء للجزء الأول فيهما[[٤]] بحاله قبل التركيب، وتذكير الثاني في المذكر لكراهة اجتماع تأنيثين من جنس",
+     "en": "keeping the first part in both as it was before compounding, and making the second masculine in the masculine because of the dislike of combining two feminines of one kind…"},
+
+    {"type": "rule"},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "سمي الواحدة واحدا إما لأنه الواحد بذاته، كما يجعل الضوء مضيئا لذاته، وإما لأنه من الأنواع المتكررة،",
+     "en": "The unit (al-wāḥida) is called wāḥid either because it is one in itself—just as light is taken to be luminous in itself—or because it is of the repeated kinds;"},
+    {"type": "pair",
+     "ar": "والراجح هو الثاني، وإليه أشار الرضي حيث قال: فالواحد بمعنى المنفرد، أي: العدد المنفرد،",
+     "en": "the preponderant view is the second, and al-Raḍī alluded to it where he said: wāḥid means “single”, that is, the single number,"},
+    {"type": "pair",
+     "ar": "ويستعمل في المعدود كسائر ألفاظ العدد فيقال: رجل واحد وقوم واحدون.",
+     "en": "and it is used for the counted thing like the other number words, so one says: “rajul wāḥid” (one man) and “qawm wāḥidūn” (a people who are one)."},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "التاء في «اثنتان» للتأنيث، كما في ابنتان، واللام ياء محذوف،",
+     "en": "The tāʾ in “ithnatān” is for the feminine, as in “ibnatān”, and the final radical (lām), a yāʾ, is elided;"},
+    {"type": "pair",
+     "ar": "وفي «ثنتان» بدل من ذلك اللام، كما أنه في بنتان بدل من اللام التي هي الواو،",
+     "en": "in “thintān” it is a substitute for that final radical, just as in “bintān” it is a substitute for the final radical, which is the wāw."},
+    {"type": "pair",
+     "ar": "وإبدال التاء من الياء قليل، ومن الواو كثير.",
+     "en": "Substituting tāʾ for yāʾ is rare, and for wāw frequent."},
+
+    # ---------------- Footnote 3 ----------------
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "الأحد أصله وحد على وزن حسن صفة مشبهة من وحد يحد، قلبت واوه ألفا على سبيل الشذوذ عند الجميع،",
+     "en": "Aḥad was originally waḥad, on the pattern of ḥasan, a quasi-participial adjective (ṣifa mushabbaha) from waḥada yaḥidu; its wāw was changed to alif [i.e. hamza] irregularly, according to all."},
+    {"type": "pair",
+     "ar": "وفي إحدى كذلك عند غير المازني. وأما عنده فقلب الواو المكسورة في الأول قياس كالمضمومة،",
+     "en": "In iḥdā it is likewise, according to all but al-Māzinī; for him, changing an initial wāw with kasra is regular, like one with ḍamma."},
+    {"type": "pair",
+     "ar": "ولا يستعمل أحد ولا إحدى إلا في التنييف أو مضافين نحو: أحدهم وإحداهن،",
+     "en": "Aḥad and iḥdā are used only in numbers above a decade (tanyīf) or when annexed, as in “aḥaduhum” and “iḥdāhunna”;"},
+    {"type": "pair",
+     "ar": "ولا يستعمل واحد وواحدة في التنييف إلا قليلا.",
+     "en": "and wāḥid and wāḥida are used in tanyīf only rarely."},
+
+    # ---------------- Footnote 4 ----------------
+    {"type": "note", "num": "٤"},
+    {"type": "pair",
+     "ar": "حال من فاعل تقول: أي مبقيا لا مفعول له لعدم صحة التعليل.",
+     "en": "[“Ibqāʾan” is] a ḥāl from the agent of “taqūlu”, that is, “keeping”; not an object of purpose (mafʿūl lahu), since giving it as a reason is not sound."},
+    # REVIEW: «أي: موردا للجزء الثاني» is printed so; the sense of «موردا» here is unclear (a gloss «مذكرا» would be expected). Transcribed as printed; translation tentative.
+    {"type": "pair",
+     "ar": "وكذا تذكير الثاني عطف عليه أي: تذكيرا للجزء الثاني في المؤنث، وكراهة مفعول له للتذكير أي: موردا للجزء الثاني في المذكر لكراهة اجتماع التأنيثين،",
+     "en": "Likewise “tadhkīr al-thānī” is coordinated with it, that is, “making the second part masculine in the feminine”; and “karāhata” is an object of purpose for “tadhkīr”, that is, “bringing in the second part in the masculine because of the dislike of combining two feminines”."},
+    {"type": "pair",
+     "ar": "وما قيل: يلزم كون المفعول له معرفة، وهو غير جائز عند الجمهور فسهو،",
+     "en": "What has been said—that this entails the object of purpose being definite, which the majority do not allow—is an oversight;"},
+    {"type": "pair",
+     "ar": "وقد وقع في التنزيل: ﴿يجعلون أصابعهم في آذانهم من الصواعق حذر الموت﴾ (البقرة:١٩).",
+     "en": "for it occurs in the Revelation: “They put their fingers in their ears against the thunderclaps, for fear of death” (Qurʾān, Sūrat al-Baqara 2:19)."},
+    {"type": "pair",
+     "ar": "وفي الرضي: ويعزى إلى الرياشي وجوب تنكير المفعول له لمشابهة الحال والتمييز،",
+     "en": "In al-Raḍī: the view that the object of purpose must be indefinite, because of its resemblance to the ḥāl and the tamyīz, is attributed to al-Riyāshī;"},
+    {"type": "pair",
+     "ar": "وقول حاتم: واغفر عوراء الكريم ادخاره قاض عليه.",
+     "en": "and the verse of Ḥātim, “I overlook the noble man’s ugly word, to keep him in reserve”, refutes him."},
+]

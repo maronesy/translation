@@ -1,0 +1,8 @@
+# built files and scans are never committed
+books/*/build/
+books/*/source/*
+!books/*/source/README.md
+*.pdf
+__pycache__/
+.DS_Store
+.venv/

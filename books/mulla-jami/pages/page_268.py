@@ -1,0 +1,115 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 268 (printed ٢٦٧)."""
+
+PAGE_NUMBER = 268
+PRINTED_PAGE = "٢٦٧"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    # Continues «فإذا تم الاسم بأحد هذه» from the foot of PDF p. 267.
+    {"type": "matn",
+     "ar": "الأشياء[[١]] شابه الفعل إذا تم بالفاعل وصار به كلاما تاما،",
+     "en": "…things, it resembles the verb when it is completed by its agent and so becomes complete speech (kalām tāmm);"},
+    {"type": "matn",
+     "ar": "فيشابه التمييز الآتي بعده المفعول، لوقوعه بعد تمام الاسم، كما أن المفعول حقه أن يقع بعد تمام الكلام،",
+     "en": "and the tamyīz that comes after it resembles the object (mafʿūl), since it occurs after the noun is complete, just as the object properly occurs after the speech is complete."},
+    {"type": "matn",
+     "ar": "فينصبه ذلك الاسم التام قبله، لمشابهته الفعل التام بفاعله،",
+     "en": "So the complete noun before it puts it in the accusative, because [that noun] resembles the verb completed by its agent."},
+    {"type": "matn",
+     "ar": "وهذه الأشياء إنما قامت مقام الفاعل، لكونها في آخر الاسم، كما كان الفاعل عقيب الفعل.",
+     "en": "These things stand in place of the agent only because they are at the end of the noun, just as the agent comes right after the verb."},
+    {"type": "matn",
+     "ar": "ألا ترى أن لام التعريف الداخلة على أول الاسم وإن كان يتم بها الاسم، فلا يضاف معها لا ينتصب التمييز عنه،",
+     "en": "Do you not see that the definite article, which enters at the beginning of the noun, even though the noun is completed by it, so that it cannot be put into a genitive construction with it, does not make a tamyīz from it take the accusative?"},
+    {"type": "matn",
+     "ar": "فلا يقال: «عندي الراقود خلا»[[٢]].",
+     "en": "So one does not say: “I have the rāqūd in vinegar.”"},
+    {"type": "matn",
+     "ar": "(فيفرد) أي: التمييز وإن كان الاسم التام مثنى أو مجموعا (إن كان) أي: التمييز (جنسا)",
+     "en": "(It is put in the singular), that is, the tamyīz, even if the complete noun is dual or plural, (if it is), that is, the tamyīz, (a genus [jins]),"},
+    {"type": "matn",
+     "ar": "وهو ما يتشابه أجزاؤه[[٣]]، ويقع مجردا عن التاء على القليل والكثير،",
+     "en": "which is that whose parts are alike, and which applies without the tāʾ [of unity] to both little and much;"},
+    {"type": "matn",
+     "ar": "فلا حاجة إلى تثنيته وجمعه كـ«الماء والتمر والزيت والضرب»، بخلاف «رجل وفرس»",
+     "en": "so there is no need to put it in the dual or plural, as with “water,” “dates,” “oil” and “striking,” unlike “man” and “horse”;"},
+    {"type": "matn",
+     "ar": "(إلا أن يقصد الأنواع) أي: ما فوق النوع الواحد، فيشمل المثنى أيضا؛",
+     "en": "(unless the species are intended), that is, what exceeds a single species, so that it includes the dual too;"},
+    {"type": "matn",
+     "ar": "لأنه لا يدل لفظ الجنس مفردا عليها، فلا بد من أن يثنى أو يجمع[[٤]].",
+     "en": "for the generic term in the singular does not signify them, so it must be put in the dual or the plural."},
+    {"type": "matn",
+     "ar": "قيل: وفي تخصيص قصد الأنواع بالاستثناء نظر؛",
+     "en": "It has been said: singling out the intention of species by the exception is open to question;"},
+    {"type": "matn",
+     "ar": "لأنه كما جاز أن يقال: «طاب زيد جلستين» للنوع، جاز أيضا أن يقال: «طاب زيد جلستين» للعدد[[٥]].",
+     "en": "for just as one may say “Zayd was good in two manners of sitting (jilsatayn)” for the species, so one may also say “Zayd was good in two sittings (jalsatayn)” for the number."},
+
+    {"type": "rule"},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "قال الشيخ الرضي: قد يتم الاسم بنفسه، فينتصب عنه التمييز. وذلك في شيئين:",
+     "en": "Shaykh al-Raḍī said: the noun may be complete in itself, and a tamyīz from it then takes the accusative. That occurs in two things."},
+    {"type": "pair",
+     "ar": "أحدهما: الضمير، وهو الأكثر. وذلك فيما فيه المبالغة والتفخيم، نحو: «نعم رجلا» ويا لها قضية، ولله دره فارسا إذا كان الضمير مبهما.",
+     "en": "The first is the pronoun, which is the more frequent; that is in what carries intensification and magnification, as in “niʿma rajulan” (what an excellent man!), “yā lahā qaḍiyyatan” (what a case!) and “lillāhi darruhu fārisan” (how excellent he is as a horseman!), when the pronoun is vague."},
+    {"type": "pair",
+     "ar": "وثانيهما: اسم الإشارة نحو قوله تعالى: ﴿ماذا أراد الله بهذا مثلا﴾ (سورة البقرة:٢٦)،",
+     "en": "The second is the demonstrative noun, as in His words, the Exalted: “What does Allah intend by this as an example?” (Qurʾān, Sūrat al-Baqara 2:26);"},
+    {"type": "pair",
+     "ar": "والناصب للتمييز في الصورتين هو نفس الضمير واسم الإشارة.",
+     "en": "what puts the tamyīz in the accusative in both forms is the pronoun itself and the demonstrative itself."},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "في القاموس: الراقود: الدن كبير أو طويل الأسفل يسبع داخله بالقار.",
+     "en": "In al-Qāmūs: the rāqūd is a large wine-jar, or one long at the base, whose inside is coated with pitch."},
+    # REVIEW: «يسبع داخله بالقار» printed clearly; the lexicons have «يسيع» (to coat); transcribed as printed.
+    {"type": "pair",
+     "ar": "وفي الأساس: مكيال معروف لأهل مصر يأخذ أربعة وعشرين صاعا.",
+     "en": "In al-Asās: a well-known measure of the people of Egypt that holds twenty-four ṣāʿs."},
+
+    # ---------------- Footnote 3 ----------------
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "أي: تشابه أجزاؤه في اسم الكل. والأولى هو ما تشابه نفسه وجزؤه.",
+     "en": "That is, whose parts are alike in [bearing] the name of the whole. Better: it is that of which the thing itself and its part are alike."},
+    {"type": "pair",
+     "ar": "ولك أن تجعل تشابه مضارع المفاعلة، ومسند إلى ضمير ما، وأجزؤه مفعولا به.",
+     "en": "You may take “tashābaha” as the imperfect of the mufāʿala form, ascribed to the pronoun of “mā,” with “ajzuʾuhu” as its direct object."},
+    {"type": "pair",
+     "ar": "ويشكل بالأبوة؛ لأنه لا جزء له، فالأولى الاقتصار على الوقوع مجردا عن التاء على القليل والكثير.",
+     "en": "This is problematic with “fatherhood,” for it has no part; so it is better to restrict [the definition] to applying without the tāʾ to both little and much."},
+    {"type": "pair",
+     "ar": "قال الرضي: إذا قصد الأنواع جرد عن التاء، وإذا لم يقصد يلتزم التاء.",
+     "en": "Al-Raḍī said: when the species are intended it is stripped of the tāʾ, and when they are not intended the tāʾ is required."},
+
+    # ---------------- Footnote 4 ----------------
+    {"type": "note", "num": "٤"},
+    {"type": "pair",
+     "ar": "ضمير الفعلين راجع إلى تمييز غير العدد بقرينة الإحالة.",
+     "en": "The pronoun of the two verbs refers to the tamyīz of what is not a number, as shown by the cross-reference."},
+    {"type": "pair",
+     "ar": "وذلك لأن هذا الحكم لا يجري في العدد مثلا تمييز عشرين مفرد سواء كان جنسا أو لا، وسواء قصد به الأنواع أو لا.",
+     "en": "That is because this ruling does not apply to number: the tamyīz of “twenty,” for example, is singular, whether it is a genus or not, and whether the species are intended by it or not."},
+    {"type": "pair",
+     "ar": "وقال الشيخ الرضي: إذا قصد به الأنواع وجب تجريد التمييز عن التاء، نحو: عشرين تمرا. وإذا لم يقصد به الأنواع وجب كونه مع التاء.",
+     "en": "Shaykh al-Raḍī said: when the species are intended by it, the tamyīz must be stripped of the tāʾ, as in “twenty [kinds of] dates”; and when the species are not intended by it, it must carry the tāʾ."},
+
+    # ---------------- Footnote 5 ----------------
+    {"type": "note", "num": "٥"},
+    {"type": "pair",
+     "ar": "وإنما مثل بـ«طاب زيد جلستين» دون أن يقول: عدل ثوبين؛ لأنه يمكن المناقشة في كون الثوبين للعدد",
+     "en": "He gave the example “Zayd was good in two sittings” rather than saying “a load of two garments” only because it can be disputed whether “two garments” is for number,"},
+    {"type": "pair",
+     "ar": "بخلاف جلستين بالفتح، فإنه لقصد الأفراد لا محالة.",
+     "en": "unlike “jalsatayn” with fatḥa, which is certainly for intending individual instances."},
+    {"type": "pair",
+     "ar": "وفيه أنه من قبيل التمييز عن النسبة. وكلامنا في",
+     "en": "Against this: it belongs to the category of tamyīz from the predication (nisba), whereas our discussion is about…"},
+]

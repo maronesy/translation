@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 508 (printed ٥٠٧)."""
+
+PAGE_NUMBER = 508
+PRINTED_PAGE = "٥٠٧"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    # This page has no footnotes.
+    # Continues «لئلا يلتبس بصيغة» at the foot of PDF p. 507 (mid-sentence).
+    {"type": "matn",
+     "ar": "مضارع «علمت، وجاهلت، ودحرجت» (خوف اللبس) هذا علة لقوله: «ويضم الثالث والثاني»",
+     "en": "…of the muḍāriʿ of “ʿallamtu, wa-jāhaltu, wa-daḥrajtu” (for fear of confusion): this is a reason for his words “and the third and the second are given a ḍamma”."},
+    # REVIEW: printed «احتماع» (with ḥāʾ), apparently a misprint for «اجتماع»; transcribed as printed, translated as «اجتماع».
+    {"type": "matn",
+     "ar": "(ومعتل العين) أي: ما يكون عينه فقط معتلا؛ لئلا يرد عليه مثل: «طوي، وروي» من اللفيف، فإنه لا يعل عينه؛ لئلا يفضي إلى احتماع إعلالين في «يروى، ويطوى».",
+     "en": "(And that whose middle radical (ʿayn) is weak), that is, that whose ʿayn alone is weak, so that there is no objection against it from the like of “ṭuwiya, wa-ruwiya” of the doubly weak (lafīf) verbs; for their ʿayn is not modified, lest this lead to the meeting of two modifications (iʿlāl) in “yurwā, wa-yuṭwā”."},
+    {"type": "matn",
+     "ar": "قيل: الأصوب أن يقال: معتل العين المنقلبة عينه ألفا؛ لئلا يرد عليه مثل: «عور، وصيد»،",
+     "en": "It has been said: it is more correct to say “that whose ʿayn is weak, its ʿayn being changed into an alif”, so that there is no objection against it from the like of “ʿuwira, wa-ṣuyida”."},
+    {"type": "matn",
+     "ar": "وإنما خص معتل العين بالذكر، لزيادة غموض واختلاف في المبني للمفعول من ماضيه كما ذكر",
+     "en": "He singled out the verb with a weak ʿayn for mention only because of the greater obscurity and disagreement concerning the passive of its past, as has been mentioned,"},
+    {"type": "matn",
+     "ar": "وبتبعية ذكر معتل العين في المبني للمفعول من مضارعه وإن لم يكن فيه ما ذكرنا.",
+     "en": "and, following on from that, [he mentioned] the verb with a weak ʿayn in the passive of its muḍāriʿ, even though what we have mentioned is not found in it."},
+    {"type": "matn",
+     "ar": "(الأفصح فيه: «قيل»، و«بيع») أصلهما: «قول، وبيع» نقل الكسرة من العين إلى ما قبلها بعد حذف حركته، فصارا «بيع وقول»",
+     "en": "(The most eloquent [form] in it is “qīla” and “bīʿa”). Their base forms are “quwila, wa-buyiʿa”; the kasra was transferred from the ʿayn to what precedes it after its own vowel was removed, so they became “biyʿa wa-qiwla”;"},
+    {"type": "matn",
+     "ar": "فأبدل واو «قول» ياء، لسكونها وانكسار ما قبلها، فصار «قيل» (وجاء الإشمام) وهو فصيح في نحو: «قيل وبيع».",
+     "en": "then the wāw of “qiwla” was replaced by a yāʾ because it is quiescent and what precedes it has a kasra, and it became “qīla”. (And the ishmām has come [in it]), and it is eloquent in the like of “qīla wa-bīʿa”."},
+    {"type": "matn",
+     "ar": "وفي شرح الرضي: حقيقة هذا الإشمام أن تنحو بكسرة فاء الفعل نحو الضمة فتميل الياء الساكنة بعدها نحو الواو قليلا؛ إذ هي تابعة لحركة ما قبلها،",
+     "en": "In the commentary of al-Raḍī: the reality of this ishmām is that you incline the kasra of the first radical (fāʾ) of the verb towards the ḍamma, so that you incline the quiescent yāʾ after it slightly towards the wāw, since it follows the vowel of what precedes it;"},
+    {"type": "matn",
+     "ar": "هذا مراد النحاة والقراء بالإشمام في هذا الموضع.",
+     "en": "this is what the grammarians and the Qurʾān readers mean by ishmām in this place."},
+    {"type": "matn",
+     "ar": "وقال بعضهم: الإشمام ههنا كالإشمام حالة الوقف، أعني: ضم الشفتين فقط مع كسر الفاء خالصا، وهذا خلاف المشهور عند الفريقين.",
+     "en": "Some of them said: ishmām here is like ishmām in the state of pause, namely rounding the lips only, with a pure kasra on the fāʾ; this is contrary to what is well known among both groups."},
+    {"type": "matn",
+     "ar": "وقال بعضهم: هو أن تأتي بضمة خالصة بعدها ياء ساكنة، وهذا أيضا غير مشهور عندهم،",
+     "en": "And some of them said: it is that you pronounce a pure ḍamma followed by a quiescent yāʾ; this too is not well known among them."},
+    {"type": "matn",
+     "ar": "والغرض من الإشمام الإيذان بأن الأصل الضم في أوائل هذه الحروف.",
+     "en": "The purpose of ishmām is to signal that the ḍamma is the original vowel at the beginning of these words."},
+    {"type": "matn",
+     "ar": "(و) جاء (الواو) أيضا على ضعف، فقيل: «قول، وبوع» بالإسكان بلا نقل، وجعل الياء واوا، لسكونها وانضمام ما قبلها.",
+     "en": "(And) there has also come, weakly, (the wāw), so that “qūla, wa-būʿa” were said, with quiescence and without transfer, the yāʾ being made a wāw because it is quiescent and what precedes it has a ḍamma."},
+    {"type": "matn",
+     "ar": "(ومثله) أي: مثل باب الماضي المجهول من معتل العين من الثلاثي المجرد (باب) الماضي المجهول من معتل العين من باب «الافتعال والانفعال» نحو: («اختير» و«انقيد») في مجيء اللغات الثلاثة فيه؛",
+     "en": "(And like it), that is, like the class of the passive past of the bare triliteral with a weak ʿayn, (is the class of) the passive past with a weak ʿayn of the forms “iftiʿāl and infiʿāl”, as in (“ukhtīra” and “unqīda”), in that the three dialectal forms occur in it;"},
+    {"type": "matn",
+     "ar": "إذ «تير وقيد» فيهما مثل: «قيل وبيع» بلا تفاوت",
+     "en": "for “-tīra” and “-qīda” in them are like “qīla wa-bīʿa”, without difference;"},
+    {"type": "matn",
+     "ar": "(دون «استخير» و«أقيم»)؛ إذ ليس ذلك مثل: «قيل وبيع» لسكون ما قبل حرف العلة فيهما في الأصل؛",
+     "en": "(not “ustukhīra” and “uqīma”), since that is not like “qīla wa-bīʿa”, because what precedes the weak letter in them is quiescent in the base form;"},
+    {"type": "matn",
+     "ar": "إذ أصلهما «استخير، وأقوم» بالياء والواو المكسورتين،",
+     "en": "for their base forms are “ustukhyira, wa-uqwima”, with the yāʾ and the wāw bearing a kasra;"},
+    {"type": "matn",
+     "ar": "والقياس فيهما إذا سكن ما قبلهما أن تنقل حركتهما إليه، وتقلب العين ياء إذا كانت واوا، فيقال: «استخير وأقيم» لغة واحدة.",
+     "en": "and the rule in them, when what precedes them is quiescent, is that their vowel is transferred to it and the ʿayn is changed into a yāʾ when it is a wāw, so that one says “ustukhīra wa-uqīma”, in a single dialectal form."},
+]

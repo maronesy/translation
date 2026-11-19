@@ -1,0 +1,66 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 588 (printed ٥٨٧)."""
+
+PAGE_NUMBER = 588
+PRINTED_PAGE = "٥٨٧"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    # This page has no footnotes. It begins a new sentence after «(فيه) أي: في الجواب.»
+    # at the foot of PDF p. 587.
+    {"type": "matn",
+     "ar": "(وكان الجواب للقسم) فقط (لفظا) لا للقسم والشرط جميعا، لأنه يلزم أن يكون مجزوما وغير مجزوم، وهو محال.",
+     "en": "(And the apodosis belongs to the oath) alone (in wording), not to the oath and the condition together, since it would then follow that it is both in the jussive (majzūm) and not in the jussive, which is impossible."},
+    {"type": "matn",
+     "ar": "وأما معنى فهو جواب للقسم؛ لكون اليمين عليه، والشرط أيضا، لكونه مشروطا بالشرط",
+     "en": "As for meaning, it is the apodosis of the oath, since the swearing bears on it, and of the condition as well, since it is conditioned by the condition,"},
+    {"type": "matn",
+     "ar": "(مثل: «والله إن أتيتني») مثال للماضي لفظا (أو لم تأتني) مثال للماضي معنى («لأكرمتك»).",
+     "en": "(as in “wa-llāhi in ataytanī”) — an example of the perfect in wording — (“or lam taʾtinī”) — an example of the perfect in meaning — (“la-akramtuka”) (by Allah, whether you came to me or did not come to me, I would honour you)."},
+    {"type": "matn",
+     "ar": "(وإن توسط) أي: القسم بين أجزاء الكلام (بتقديم الشرط عليه أو غيره) أي: تقديم غير الشرط",
+     "en": "(And if it comes in the middle), that is, the oath, among the parts of the speech, (with the condition placed before it, or something else), that is, with something other than the condition placed before it,"},
+    {"type": "matn",
+     "ar": "(جاز أن يعتبر) القسم ويلغى الشرط (وأن يلغى) القسم ويعتبر الشرط.",
+     "en": "(it is permitted that it be given effect), the oath, with the condition disregarded, (and that it be disregarded), the oath, with the condition given effect."},
+    {"type": "matn",
+     "ar": "ويحتمل أن يكون المعنى: «جاز أن يعتبر الشرط ويلغى القسم، وأن يلغى الشرط ويعتبر القسم»",
+     "en": "The meaning may also be: “it is permitted that the condition be given effect and the oath disregarded, and that the condition be disregarded and the oath given effect”,"},
+    {"type": "matn",
+     "ar": "(كقولك: «أنا -والله- إن أتيتني آتك)",
+     "en": "(as in your saying “anā — wa-llāhi — in ataytanī ātika” (I — by Allah — if you come to me, I shall come to you))."},
+    {"type": "matn",
+     "ar": "فعلى المعنى الأول هذا مثال لتقديم غير الشرط، وجواز إلغاء القسم،",
+     "en": "On the first meaning, this is an example of something other than the condition being placed first, and of the permissibility of disregarding the oath;"},
+    {"type": "matn",
+     "ar": "فيكون باعتبار التقديم والجواز، كليهما نشرا على غير ترتيب اللف.",
+     "en": "so with respect to both the placing-first and the permissibility it is an unfolding (nashr) not in the order of the folding (laff)."},
+    {"type": "matn",
+     "ar": "وعلى المعنى الثاني هذا مثال لتقديم غير الشرط وجواز اعتبار الشرط،",
+     "en": "On the second meaning, this is an example of something other than the condition being placed first and of the permissibility of giving effect to the condition;"},
+    {"type": "matn",
+     "ar": "فيكون النشر باعتبار التقديم على غير ترتيب اللف، وباعتبار جوازه اعتبار الشرط على ترتيبه",
+     "en": "so the unfolding is, with respect to the placing-first, not in the order of the folding, and with respect to its permitting the condition to be given effect, in its order."},
+    {"type": "matn",
+     "ar": "(و«إن أتيتني والله لآتينك»).",
+     "en": "(And “in ataytanī wa-llāhi la-ātiyannaka” (if you come to me, by Allah, I shall surely come to you))."},
+    # REVIEW: printed «على تقدير توسطة» with final tāʾ marbūṭa (one would expect «توسطه»); transcribed as printed.
+    {"type": "matn",
+     "ar": "وإنما أورد في هذا المثال الشرط بصيغة الماضي على خلاف المثال الأول إشارة إلى اشتراط المضي في الشرط في صورة اعتبار القسم على تقدير توسطة؛ كاشتراطه على تقدير التقدم.",
+     "en": "He put the condition in this example in the form of the perfect, unlike the first example, as an indication that the perfect is required in the condition when the oath is given effect on the supposition of its coming in the middle, just as it is required on the supposition of its coming first."},
+    {"type": "matn",
+     "ar": "فعلى المعنى الأول هذا مثال لتقديم الشرط وجواز اعتبار القسم، فهو باعتبارهما جميعا نشر على ترتيب اللف.",
+     "en": "On the first meaning, this is an example of the condition being placed first and of the permissibility of giving effect to the oath; so with respect to both together it is an unfolding in the order of the folding."},
+    {"type": "matn",
+     "ar": "وعلى المعنى الثاني مثال لتقديم الشرط وجواز إلغائه، فالنشر باعتبار الأول على ترتيب اللف، وباعتبار الثاني على غير ترتيبه.",
+     "en": "On the second meaning, it is an example of the condition being placed first and of the permissibility of disregarding it; so the unfolding is, with respect to the first, in the order of the folding, and with respect to the second, not in its order."},
+    {"type": "matn",
+     "ar": "ففي كل من المثالين يقع من حيث المعنى الثاني اختلاف بين اعتباريه، بخلاف المعنى الأول، فالحمل عليه أولى،",
+     "en": "Thus in each of the two examples, on the second meaning, there is a discrepancy between its two respects, unlike the first meaning; so construing [the text] according to the latter is preferable."},
+    {"type": "matn",
+     "ar": "وعلى تقدير الحمل عليه، وإن كان رعاية كون النشر على ترتيب اللف يقتضي تقديم المثال الثاني على الأول،",
+     "en": "On the supposition of construing it so, even though observing that the unfolding be in the order of the folding would require putting the second example before the first,"},
+    {"type": "matn",
+     "ar": "لكنه أراد اتصال المثال بالممثل له بقدر الإمكان، على تقدير تقدم اللفين على نشرهما من حيث مثالاهما.",
+     "en": "he wished the example to be joined to what it exemplifies as far as possible, on the supposition that the two foldings precede their unfolding with respect to their two examples."},
+]

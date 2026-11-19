@@ -1,0 +1,98 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 266 (printed ٢٦٥)."""
+
+PAGE_NUMBER = 266
+PRINTED_PAGE = "٢٦٥"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    {"type": "matn",
+     "ar": "واحترز به عن النعت والحال، فإنهما يرفعان الإبهام المستقر الواقع في الوصف لا في الذات.",
+     "en": "By this he excludes the adjective (naʿt) and the ḥāl, for these two remove a settled vagueness that lies in the quality, not in the entity."},
+    {"type": "matn",
+     "ar": "وتحقيق ذلك: أن الواضع لما وضع «الرطل» مثلا لنصف «من»، فلا شك أن الموضوع له معنى معين متميز عما هو أقل من النصف كـ«الربع»، وعما هو أكثر منه كـ«من ومنين»،",
+     "en": "The precise account of this is that when the coiner (wāḍiʿ) coined “raṭl,” for example, for half a “mann,” there is no doubt that what it was coined for is a determinate meaning, distinguished from what is less than a half, such as “a quarter,” and from what is more than it, such as “a mann” and “two manns”;"},
+    {"type": "matn",
+     "ar": "ولا إبهام فيه إلا من حيث ذاته[[١]] أي: جنسه، فإنه لا يعلم منه بحسب الوضع أنه من جنس العسل أو الخل أو غيرهما،",
+     "en": "and there is no vagueness in it except with respect to its entity, that is, its genus; for it is not known from it, by coinage, whether it is of the genus of honey or of vinegar or of something else;"},
+    {"type": "matn",
+     "ar": "وإلا من حيث وصفه[[٢]]، فإنه لا يعلم منه بحسب الوضع أنه بغدادي أو مكي،",
+     "en": "and except with respect to its quality, for it is not known from it, by coinage, whether it is a Baghdādī or a Meccan [raṭl]."},
+    {"type": "matn",
+     "ar": "فإذا أريد رفع الإبهام الوصفي الثابت فيه بحسب الوضع أتبع بصفة أو حال، فيقال: «رطل بغدادي»،",
+     "en": "So when the removal of the qualitative vagueness that is fixed in it by coinage is intended, it is followed by an adjective or a ḥāl, and one says: “a Baghdādī raṭl”;"},
+    {"type": "matn",
+     "ar": "وإذا أريد رفع الإبهام الذاتي قيل: «زيتا»، فـ«زيتا» يرفع الإبهام المستقر عن الذات لا النعت والحال، فإنهما يرفعان الإبهام عن الوصف.",
+     "en": "and when the removal of the vagueness of entity is intended, one says “[a raṭl of] oil.” So “oil” removes the settled vagueness from the entity, not the adjective and the ḥāl, for these remove vagueness from the quality."},
+    {"type": "matn",
+     "ar": "(مذكورة أو مقدرة) صفتان لـ«ذات» إشارة إلى تقسيم التمييز،",
+     "en": "(Mentioned or implied): two qualifiers of “entity,” pointing to the division of the tamyīz."},
+    {"type": "matn",
+     "ar": "فالمذكورة نحو: «رطل زيتا»، والمقدرة نحو: «طاب زيد نفسا»،",
+     "en": "The mentioned [entity] is as in “a raṭl of oil,” and the implied as in “Zayd is good in soul”;"},
+    {"type": "matn",
+     "ar": "فإنه في قوة قولنا: «طاب شيء» منسوب إلى «زيد» و«نفسا» يرفع الإبهام عن ذلك الشيء المقدر فيه.",
+     "en": "for it is equivalent to our saying “a thing pertaining to Zayd is good,” and “in soul” removes the vagueness from that thing implied in it."},
+    {"type": "matn",
+     "ar": "(فالأول) أي: القسم الأول من التمييز، وهو ما يرفع الإبهام عن ذات مذكورة يرفعه (عن مفرد)",
+     "en": "(The first), that is, the first division of the tamyīz, which removes vagueness from a mentioned entity, removes it (from a single term [mufrad])."},
+    {"type": "matn",
+     "ar": "ويعني به: ما يقابل الجملة وشبهها والمضاف",
+     "en": "By this he means what contrasts with the sentence, with what resembles it, and with the first term of a genitive construction (muḍāf)."},
+    {"type": "matn",
+     "ar": "(مقدار) صفة لـ«مفرد»، وهو ما يقدر به الشيء[[٣]] أي: يعرف به قدره ويتبين",
+     "en": "([That is a] measure [miqdār]): a qualifier of “single term”; it is that by which a thing is measured, that is, by which its amount is known and made clear,"},
+    {"type": "matn",
+     "ar": "(غالبا) أي: في غالب المواد وأكثرها.",
+     "en": "(mostly), that is, in most cases and the majority of them."},
+    {"type": "matn",
+     "ar": "(وذلك) أي: رفع الإبهام مطلقا يتحقق في ضمن هذا الرفع الخاص في أكثر",
+     "en": "(And that), that is, the removal of vagueness in general, is realized within this particular removal in most…"},
+
+    {"type": "rule"},
+
+    # ---------------- Footnote continued from PDF p. 265 (no. ٥ there) ----------------
+    {"type": "note", "num": ""},
+    {"type": "pair",
+     "ar": "خفاء فيه إلا من حيث حمل الذات على الجنس.",
+     "en": "…obscure, except in that “entity” is taken to mean the genus."},
+    {"type": "pair",
+     "ar": "ولو أريد بالذات ما يقابل المفهوم لصح وكان أوضح،",
+     "en": "Were “entity” taken to mean what contrasts with the concept, it would be correct and clearer;"},
+    {"type": "pair",
+     "ar": "فيقال في «رطل زيتا»: إن فرد الرطل مبهم لا يعلم من أي جنس؟ فلما قيل: زيتا بين ذاته بأن يبين أنه من جنس الزيت،",
+     "en": "so one says of “a raṭl of oil”: the instance of raṭl is vague; it is not known of which genus it is. When “oil” is said, it clarifies its entity by making clear that it is of the genus of oil."},
+    {"type": "pair",
+     "ar": "وبعد يشكل بخروج تمييز هو صفة نحو لله دره فارسا، فإنه يرفع الإبهام عن الصفة،",
+     "en": "Even so, a difficulty remains in the exclusion of a tamyīz that is an adjective, as in “lillāhi darruhu fārisan” (how excellent he is as a horseman!), for it removes vagueness from the quality;"},
+    {"type": "pair",
+     "ar": "فإن الغرض من وضع المشتق المعنى إلا أن يقال: التمييز إخراج الاسم عن وضعه الذي لغرض المعنى وجعله لبيان الجنس.",
+     "en": "for the purpose in coining a derived noun is the meaning [it expresses]; unless it be said that the tamyīz is the removal of a noun from its coinage, which is for the purpose of the meaning, and making it serve to state the genus."},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "فيه مساهلة؛ إذ ذات الرطل بالمعنى المذكور هي الصنجة، ولا إبهام فيها. إنما الإبهام فيما يوزن بها.",
+     "en": "There is laxity in this, since the entity of the raṭl in the sense mentioned is the weight-stone (ṣanja), and there is no vagueness in it; the vagueness lies only in what is weighed with it."},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "هو بالحقيقة راجع إلى الوزن كما أن الأول راجع بالحقيقة إلى الموزون.",
+     "en": "This in reality goes back to the weight, just as the first in reality goes back to what is weighed."},
+
+    # ---------------- Footnote 3 ----------------
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "وذلك إما مقياس مشهور موضوع لذلك كالعدد والرطل، أو مقياس غير مشهور، ولا موضوع لذلك",
+     "en": "That is either a well-known standard of measure coined for this purpose, such as number and the raṭl, or a standard that is not well known and not coined for this,"},
+    {"type": "pair",
+     "ar": "كقوله تعالى: ﴿ملء الأرض ذهبا﴾ (سورة آل عمران:٩١). والملء قدر ما يملأ به الشيء،",
+     "en": "as in His words, the Exalted: “the earth’s fill of gold” (Qurʾān, Sūrat Āl ʿImrān 3:91); “fill” (milʾ) is the amount with which a thing is filled;"},
+    {"type": "pair",
+     "ar": "وقولك: عندي مثل زيد رجلا.",
+     "en": "and your saying: “I have the like of Zayd as a man.”"},
+    {"type": "pair",
+     "ar": "وأما غيرك إنسانا وسواك رجلا، فمحمول على مثلك بالضدية، ونحو: بطولك رجلا ويعرضك عرضا.",
+     "en": "As for “other than you as a human being” and “besides you as a man,” they are modelled on “the like of you” by way of contrariety; and likewise “of your height as a man” and “of your breadth in breadth.”"},
+]

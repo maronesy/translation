@@ -1,0 +1,29 @@
+# Book settings — read by every engine script. See docs/NEW-BOOK.md.
+
+slug = "mulla-jami"
+status = "complete"            # proposal | in-progress | complete
+
+[title]
+ar = "الفوائد الضيائية"
+en = "Sharḥ Mullā Jāmī"
+subtitle_en = "The Commentary of Mullā ʿAbd al-Raḥmān al-Jāmī on al-Kāfiya of Ibn al-Ḥājib"
+field_en = "in the science of Arabic grammar (naḥw)"
+
+[author]
+ar = "نور الدين عبد الرحمن الجامي"
+en = "ʿAbd al-Raḥmān al-Jāmī (d. 898/1492)"
+
+[source]
+# The printed edition the translation follows. Its scan is NOT in this repository.
+edition = "al-Fawāʾid al-Ḍiyāʾiyya al-mashhūr bi-Mullā Jāmī, اعتنى به إلياس قيلان. Istanbul: Şifa Yayınevi, 2015. ISBN 978-605-84063-1-5."
+pdf_offset = 1                  # scan PDF page = printed page + 1
+first_page = 24                 # first translated PDF page (printed ٢٣)
+last_page = 600                 # last translated PDF page (printed ٥٩٩, the colophon)
+missing = ["٢٨"]                # printed pages absent from the scan used
+local_scan = "source/mulla_jami.pdf"   # where to put your own copy (git-ignored)
+
+[rules]
+diacritics = false              # no ḥarakāt, shadda, sukūn, tanwīn or dagger alif in the Arabic
+
+[output]
+basename = "Mulla-Jami"

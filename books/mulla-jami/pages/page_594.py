@@ -1,0 +1,62 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 594 (printed ٥٩٣)."""
+
+PAGE_NUMBER = 594
+PRINTED_PAGE = "٥٩٣"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    # Continues al-Raḍī's quotation «… أن يكون تنوين واحد للتمكن والتنكير» from PDF p. 593.
+    {"type": "matn",
+     "ar": "معا، فأقول: التنوين في «رجل» يفيد التنكير أيضا، فإذا جعلته علما لشخص تمحض للتمكن.",
+     "en": "…together. So I say: the tanwīn in “rajulun” conveys indefiniteness as well; and if you make it the proper name of a person, it becomes purely for full declinability.”"},
+    {"type": "matn",
+     "ar": "(والعوض) وهو ما لحق الاسم عوضا عن المضاف إليه، لتعاقبهما على آخر الكلمة",
+     "en": "(And for compensation (ʿiwaḍ)): this is what attaches to the noun in compensation for the second term of the genitive construction (al-muḍāf ilayhi), since the two alternate at the end of the word,"},
+    {"type": "matn",
+     "ar": "كـ«يومئذ» أي: «يوم إذ كان كذا»، فاليوم مضاف إلى «إذ»، و«إذ» كانت مضافة إلى الجملة التي كانت بعدها،",
+     "en": "as in “yawmaʾidhin”, that is, “yawma idh kāna kadhā” (on the day when such-and-such was): “yawm” is annexed to “idh”, and “idh” was annexed to the sentence that came after it;"},
+    # REVIEW: printed «لئلا يبقى الكلمة» (masculine verb with the feminine «الكلمة»); transcribed as printed.
+    {"type": "matn",
+     "ar": "فلما حذفت الجملة للتخفيف ألحق بها التنوين عوضا عن الجملة، لئلا يبقى الكلمة ناقصة،",
+     "en": "so when the sentence was elided for lightness, the tanwīn was attached to it in compensation for the sentence, lest the word remain deficient."},
+    {"type": "matn",
+     "ar": "وكذلك «حينئذ، وساعتئذ، وعامئذ»، و«جعلنا بعضهم فوق بعض» أي: فوق بعضهم، و«مررت بكل قائما» أي: بكل واحد، وأمثال ذلك.",
+     "en": "Likewise “ḥīnaʾidhin” (at that time), “sāʿataʾidhin” (at that hour) and “ʿāmaʾidhin” (in that year); and “jaʿalnā baʿḍahum fawqa baʿḍin” (we set some of them above others), that is, above some of them; and “marartu bi-kullin qāʾiman” (I passed by each, standing), that is, by each one; and the like."},
+    {"type": "matn",
+     "ar": "(والمقابلة) وهو ما يقابل نون جمع المذكر السالم كـ«مسلمات»، فإن «الألف والتاء» فيه علامة الجمع، كما أن «الواو» علامة جمع المذكر السالم.",
+     "en": "(And for correspondence (muqābala)): this is what corresponds to the nūn of the sound masculine plural, as in “muslimātun”; for the “alif and tāʾ” in it are the sign of the plural, just as the “wāw” is the sign of the sound masculine plural."},
+    {"type": "matn",
+     "ar": "ولم يوجد فيها ما يقابل النون في ذلك، فزيد التنوين في آخره ليقابله.",
+     "en": "Nothing was found in it corresponding to the nūn in that [plural], so the tanwīn was added at its end to correspond to it."},
+    {"type": "matn",
+     "ar": "وتوهم بعضهم أنه للتمكن، وهو خطأ؛ لأنه إذا سميت بـ«مسلمات» مثلا امرأة يثبت فيها التنوين، ولو كانت للتمكن لزالت للعلتين: العلمية، والتأنيث.",
+     "en": "Some imagined that it is for full declinability, which is an error; for if you name a woman “Muslimāt”, for example, the tanwīn remains in it, whereas had it been for full declinability it would have been removed on account of the two causes: being a proper name (ʿalamiyya) and femininity."},
+    {"type": "matn",
+     "ar": "وظاهر أنه ليس تنوين التنكير لوجوده فيما كان علما كـ«عرفات»، ولا تنوين العوض لعدم مساعدة المعنى، ولا تنوين الترنم، لوجوده في غير أواخر الأبيات والمصاريع،",
+     "en": "It is evident that it is not the tanwīn of indefiniteness, since it is found in what is a proper name, like “ʿArafātun”; nor the tanwīn of compensation, since the meaning does not support it; nor the tanwīn of chanting, since it is found elsewhere than at the ends of verses and hemistichs."},
+    {"type": "matn",
+     "ar": "فتعين أن يكون للمقابلة؛ لأنها معنى مناسب لحمل التنوين عليه.",
+     "en": "So it is settled that it is for correspondence, because that is a meaning suited to the tanwīn's being construed upon it."},
+    {"type": "matn",
+     "ar": "(والترنم) وهو ما لحق آخر الأبيات والمصاريع؛ لتحسين الإنشاد؛ لأنه حرف يسهل به ترديد الصوت في الخيشوم، وذلك الترديد من أسباب حسن الغناء.",
+     "en": "(And for chanting (tarannum)): this is what attaches to the end of verses and hemistichs to embellish recitation, because it is a letter with which it is easy to modulate the voice in the nasal passage, and such modulation is among the causes of beautiful singing."},
+    {"type": "matn",
+     "ar": "وإنما اعتبروا ما لحق أواخر الأبيات والمصاريع وإن كان لحوقها بالحروف والكلمات الواقعة في أثنائها جائزا، بل واقعا كما نشاهد من أصحاب الغناء؛",
+     "en": "They took into account only what attaches to the ends of verses and hemistichs — even though its attaching to the letters and words occurring in their midst is permissible, indeed actual, as we witness from singers —"},
+    {"type": "matn",
+     "ar": "لأن محل التغني به إنما هو الآخر، لئلا يختل سلك النظم بتخلله بين كلمات الأبيات والمصاريع، ولا يخل بفهم المعاني.",
+     "en": "because the place for singing with it is the end only, lest the thread of the versification be disturbed by its intervening among the words of the verses and hemistichs, and lest it impair the understanding of the meanings."},
+    {"type": "matn",
+     "ar": "وهو إما أن يلحق القافية المطلقة، وهي ما كان رويها متحركا مستتبعا بإشباع حركته واحدا من الألف والواو والياء.",
+     "en": "It either attaches to the unrestricted rhyme (al-qāfiya al-muṭlaqa), which is one whose rhyme letter (rawī) is vowelled and brings, through the lengthening of its vowel, one of alif, wāw and yāʾ in its train."},
+    {"type": "matn",
+     "ar": "وسميت هذه الحروف حروف الإطلاق، لإطلاق الصوت بامتدادها.",
+     "en": "These letters are called the letters of release (ḥurūf al-iṭlāq), because the voice is released by their prolongation."},
+    {"type": "matn",
+     "ar": "ولحوق النون بهذه القافية إنما يكون بإبدال حروف الإطلاق به، كما في قول الشاعر:",
+     "en": "The attaching of the nūn to this rhyme comes about only by substituting it for the letters of release, as in the poet's words:"},
+    {"type": "verse",
+     "ar": "أقلي اللوم عاذل والعتابن          وقولي إن أصبت فقد أصابن",
+     "en": "Lessen your blame, O reproacher, and your reproof — and say, if I have hit the mark: he has indeed hit it."},
+]

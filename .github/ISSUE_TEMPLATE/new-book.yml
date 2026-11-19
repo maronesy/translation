@@ -1,0 +1,46 @@
+name: New book proposal
+description: Propose a new book translation for the project.
+title: "[new book] <title>"
+labels: [new-book]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Maintainers will reply and, if the project takes the book on, add the `book-accepted` label. Wait for it before translating many pages. The steps after acceptance are in the README, under "Propose a new book".
+  - type: input
+    id: title
+    attributes:
+      label: Title (Arabic and English)
+    validations:
+      required: true
+  - type: input
+    id: author
+    attributes:
+      label: Author and death date
+    validations:
+      required: true
+  - type: textarea
+    id: edition
+    attributes:
+      label: Printed edition you will follow
+      description: Editor, publisher, city, year, ISBN, number of pages. Scans are never committed; you work from your own copy.
+    validations:
+      required: true
+  - type: textarea
+    id: rights
+    attributes:
+      label: Rights
+      description: Is the text public domain? Does the edition add notes or apparatus that may belong to the publisher? Do you have permission?
+    validations:
+      required: true
+  - type: textarea
+    id: scope
+    attributes:
+      label: Scope and plan
+      description: Whole book or part; matn only or with ḥawāshī; who will translate; expected pace.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why this book

@@ -1,0 +1,90 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 559 (printed ٥٥٨)."""
+
+PAGE_NUMBER = 559
+PRINTED_PAGE = "٥٥٨"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    {"type": "matn",
+     "ar": "(و) مثل قول الشاعر:",
+     "en": "(And) as in the poet’s words:"},
+    {"type": "verse",
+     "ar": "....................          (إذا إنه عبد القفا واللهازم)",
+     "en": "…… (and lo, he is a slave of the nape and the jaw-bones)"},
+    {"type": "matn",
+     "ar": "مما وقعت بعد «إذا» المفاجأة.",
+     "en": "among cases where it occurs after the “idhā” of surprise (idhā al-mufājaʾa)."},
+    {"type": "matn",
+     "ar": "فيجوز فيها الكسر على أنها مع اسمها وخبرها جملة واقعة بعد «إذا» المفاجأة،",
+     "en": "Kasra is admissible in it, on the view that it with its noun and predicate is a sentence occurring after the idhā of surprise;"},
+    {"type": "matn",
+     "ar": "والفتح على أنها معهما مبتدأ محذوف الخبر، أي: إذا عبوديته للقفا واللهازم ثابتة.",
+     "en": "and fatḥa, on the view that it with them is a subject whose predicate is elided, that is, “and lo, his servitude to the nape and the jaw-bones is established”."},
+    {"type": "matn",
+     "ar": "وتمام البيت:",
+     "en": "The full verse is:"},
+    {"type": "verse",
+     "ar": "وكنت أرى زيدا -كما قيل- سيدا          إذا إنه عبد القفا واللهازم",
+     "en": "I used to think Zayd — as was said — a lord; and lo, he is a slave of the nape and the jaw-bones."},
+    {"type": "matn",
+     "ar": "قوله: «أرى» على صيغة المجهول، بمعنى «أظن»، و«زيدا» مفعوله الثاني، و«سيدا» مفعوله الثالث، و«كما قيل» معترضة.",
+     "en": "His word “urā” is in the passive form, in the sense of “aẓunnu” (I think); “Zaydan” is its second object, “sayyidan” its third object, and “as was said” is parenthetical (muʿtariḍa)."},
+    {"type": "matn",
+     "ar": "ومعنى كونه «عبد القفا واللهازم»: أنه لئيم يخدم قفاه ولهازمه، أي: همته أن يأكل ليعظم قفاه ولهازمه.",
+     "en": "The meaning of his being “a slave of the nape and the jaw-bones” is that he is base, serving his nape and his jaw-bones; that is, his concern is to eat so that his nape and his jaw-bones grow large."},
+    {"type": "matn",
+     "ar": "واللهزمتان: عظمان ناتئان في اللحيين تحت الأذنين، جمعهما بإرادة ما فوق الواحد، أو بإرادتهما مع حواليهما تغليبا.",
+     "en": "The two lihzimas are two bones protruding in the jaws below the ears; he put them in the plural meaning more than one, or meaning them together with what surrounds them, by predominance (taghlīb)."},
+    {"type": "matn",
+     "ar": "(وشبهه) بالجر[[١]] عطف على «إذا إنه عبد القفا» إلى آخره.",
+     "en": "(And what resembles it), in the genitive, coordinated with “idhā innahu ʿabdu l-qafā …”."},
+    {"type": "matn",
+     "ar": "أي: مثل: «عبد القفا» ومثل شبهه.",
+     "en": "That is, as in “ʿabdu l-qafā” and as in what resembles it."},
+    {"type": "matn",
+     "ar": "وما وجد ذلك في كثير من النسخ.",
+     "en": "This was not found in many of the copies."},
+    {"type": "matn",
+     "ar": "فمن جملة أشباهه قولهم[[٢]]: «أول ما أقول: إني أحمد الله» فإن جعلت «ما» موصولة",
+     "en": "Among the things resembling it is their saying “awwalu mā aqūlu innī aḥmadu llāha (the first thing I say is: I praise God)”. If you take “mā” as a relative…"},
+
+    {"type": "rule"},
+
+    # ---------------- Footnote 7 of PDF p. 558 (continued) ----------------
+    # Continuation of footnote [٧] from the previous page (PDF 558).
+    {"type": "note", "num": ""},
+    {"type": "pair",
+     "ar": "فإن قلت: خبر المبتدأ ليس موضع المفرد؛ لأن الخبر يكون جملة، ولذا لم يعده المصنف من مواقع المفرد، كما عد المبتدأ والمفعول؟",
+     "en": "…If you say: the predicate of a subject is not a position of the single term, because a predicate may be a sentence; this is why the author did not count it among the positions of the single term, as he counted the subject and the object —"},
+    {"type": "pair",
+     "ar": "قلت: الخبر للجزاء لا يصح أن يكون جملة، لكون إطلاق خبر المبتدأ في مقام تعليل وجوب الفتح قاصر.",
+     "en": "I say: the predicate for the apodosis cannot be a sentence; [but] using “predicate of a subject” without qualification, in giving the reason why fatḥa is required, falls short."},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "لا بالرفع عطف على مثل: من يكرمني إلى آخره، وإن كان بحسب المعنى صحيحا؛",
+     "en": "Not in the nominative, coordinated with “mithlu: man yukrimunī …”, even though that would be sound in meaning,"},
+    {"type": "pair",
+     "ar": "لأنه لم يعهد ذكر المثال بلفظ الشبه، إنما الشائع لفظ المثل والنحو.",
+     "en": "because citing an example with the word “shibh” is not customary; what is common is the words “mithl” and “naḥw”."},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "أنفع أشباهه وأجدرها بالتحقيق، لكثرة استعماله وخفاء أصله وحاله لا جرم",
+     "en": "The most useful of its like, and the most deserving of close examination, because it is used so often and its origin and status are obscure, is “lā jarama”."},
+    {"type": "pair",
+     "ar": "قال الله تعالى: ﴿لا جرم أن لهم النار﴾ (النحل:٦٢) بالفتح، وغالب أمره الفتح،",
+     "en": "Allah the Exalted said: “lā jarama anna lahumu l-nāra (without doubt, theirs is the Fire)” (Qurʾān, Sūrat al-Naḥl 16:62), with fatḥa; and it is mostly followed by fatḥa."},
+    {"type": "pair",
+     "ar": "فلا رد للكلام السابق عند الخليل وزائدة، كما في لا أقسم عند الرضي؛ لأن في جرم معنى القسم،",
+     "en": "For al-Khalīl “lā” rejects the preceding speech, and for al-Raḍī it is redundant (zāʾida), as in “lā uqsimu”, because jarama carries the sense of an oath."},
+    {"type": "pair",
+     "ar": "و«جرم» فعل ماض عند سيبويه والخليل. وفسره سيبويه بمعنى حق،",
+     "en": "“Jarama” is a past-tense verb according to Sībawayh and al-Khalīl; Sībawayh explained it as meaning “ḥaqqa” (it is true),"},
+    {"type": "pair",
+     "ar": "ومصدر بمعنى القطع كالرشد عند الفراء. وروى فيه عن العرب لا جرم على وزن",
+     "en": "while according to al-Farrāʾ it is a verbal noun meaning “cutting off”, like rashad. He related from the Arabs “lā jurma”, on the pattern…"},
+]

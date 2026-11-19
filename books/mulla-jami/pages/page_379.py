@@ -1,0 +1,106 @@
+# -*- coding: utf-8 -*-
+"""Mulla Jami — al-Fawāʾid al-Ḍiyāʾiyya. Source PDF page 379 (printed ٣٧٨)."""
+
+PAGE_NUMBER = 379
+PRINTED_PAGE = "٣٧٨"   # Arabic-Indic, as printed
+
+BLOCKS = [
+    # ---------------- The commentary text (matn) ----------------
+    # Continues «يعني: لا يكون جزءا تاما إن كان» at the foot of PDF p. 378.
+    {"type": "matn",
+     "ar": "جزءا تمييزا، أو لا يصير جزءا تاما إن كان يتم من الأفعال الناقصة[[١]]،",
+     "en": "… “juzʾan” is a specification (tamyīz); or: it does not become a complete part, if “yatimmu” is one of the incomplete verbs."},
+    {"type": "matn",
+     "ar": "والمراد بالجزء التام[[٢]] ما لا يحتاج في كونه جزءا أوليا ينحل إليه المركب أولا إلى انضمام أمر آخر معه كـ«المبتدأ والخبر والفاعل والمفعول» وغيرها،",
+     "en": "What is meant by a complete part is that which, in being a primary part into which the compound is first resolved, does not need another thing to be joined to it, such as “the subject, the predicate, the agent and the object” and the like."},
+    {"type": "matn",
+     "ar": "وإنما نفى كونه جزءا تاما لا جزءا مطلقا؛ لأنه إذا كان مجموع الموصول والصلة جزءا من المركب يكون الموصول وحده أيضا جزءا لكن لا جزءا تاما أوليا",
+     "en": "He denied only its being a complete part, not its being a part at all, because when the relative noun and its relative clause together are a part of the compound, the relative noun on its own is also a part, but not a complete, primary part,"},
+    {"type": "matn",
+     "ar": "(إلا بصلة وعائد) والمراد بالصلة معناها اللغوي[[٣]] لا الاصطلاحي،",
+     "en": "(except with a relative clause (ṣila) and a returning pronoun (ʿāʾid)). By ṣila is meant its lexical meaning, not its technical one,"},
+    {"type": "matn",
+     "ar": "فإن الاصطلاحي عبارة عن جملة مذكورة بعد الموصول مشتملة على ضمير عائد إليه، فمعرفتها موقوفة على معرفة الموصول، فلو عرف الموصول بها لزم الدور،",
+     "en": "for the technical one denotes a sentence mentioned after the relative noun that contains a pronoun returning to it; so knowing it depends on knowing the relative noun, and if the relative noun were defined by it, circularity (dawr) would follow."},
+    {"type": "matn",
+     "ar": "والقرينة على أن المراد بها معناها اللغوي لا الاصطلاحي هي قوله: «وعائد»، فإنه لو أريد بها معناها الاصطلاحي لكان هذا القول مستدركا[[٤]]؛",
+     "en": "The indication that its lexical, not its technical, meaning is intended is his saying “and a returning pronoun”, for had its technical meaning been intended, this phrase would have been redundant;"},
+
+    {"type": "rule"},
+
+    # ---------------- Footnote 1 ----------------
+    {"type": "note", "num": "١"},
+    {"type": "pair",
+     "ar": "بنى تفسير الكلام على القولين في الأفعال الناقصة القول الثاني أنه لا حصر لها، والأول أنه منحصر فيما ضبط،",
+     "en": "He based the interpretation of the passage on the two views concerning the incomplete verbs: the second view is that they are without limit, and the first is that they are confined to those that have been recorded,"},
+    {"type": "pair",
+     "ar": "وما عداها مما التزم بعد مرفوعه منصوب أفعال تامة لا تنفك عن الأحوال، فالمنصوبات بعدها أحوال،",
+     "en": "while the others, those after whose nominative an accusative is obligatory, are complete verbs never free of circumstantial qualifiers (aḥwāl), so the accusatives after them are ḥāls."},
+    {"type": "pair",
+     "ar": "وقدم ما هو الراجح البيان إلا أنه جعل المنصوب هنا تمييزا ولا يبعد، ولو جعله حالا لكان أوفق بما تقرر في محله،",
+     "en": "He put first the explanation that is preferred, except that he made the accusative here a specification, which is not far-fetched; had he made it a ḥāl, it would have agreed better with what is established in its place."},
+    {"type": "pair",
+     "ar": "وجعل بعد كونه فعلا ناقصا بمعنى صار وهو غير ظاهر. والظاهر أنه بمعنى كان،",
+     "en": "Then, taking it as an incomplete verb, he made it mean ṣāra (become), which is not evident; the evident view is that it means kāna (be)."},
+    {"type": "pair",
+     "ar": "وجعل الجزء التام بمعنى الجزء الأول، وأراد بالناقص جزء الجزء.",
+     "en": "He took “complete part” to mean “first part”, and by the incomplete [part] he meant a part of a part."},
+    {"type": "pair",
+     "ar": "وهذا إنما يتم لو كان المبتدأ أو الخبر أو المفعول مجموع الصلة والموصول وليس كذلك، بل هو الموصول والصلة تفسير له، ولا نصيب له من إعراب الموصول،",
+     "en": "This holds only if the subject, the predicate or the object were the relative clause and the relative noun together, which is not so; rather, it is the relative noun, and the relative clause is an explication of it and has no share in the relative noun’s case."},
+    {"type": "pair",
+     "ar": "فمعنى قوله: إلا بصلة إلا مقارنا بها لا مأخوذا معها.",
+     "en": "So the meaning of his words “except with a relative clause” is “except when conjoined with it”, not “taken together with it”."},
+    # REVIEW: «من أن البيان تمام بدون التام» printed clearly; the sense is obscure (a misprint is possible), English tentative.
+    {"type": "pair",
+     "ar": "وعلى هذا ينبغي أن يسلك في بيانه ما اشتهر في أمثال لا يتم الدليل من أن البيان تمام بدون التام، والتركيب كناية عن نفي البيان والدليل،",
+     "en": "On this basis one should follow, in explaining it, what is well known in such phrases as “the proof is not complete”: that the explanation is complete without the complete [part], and the construction is a metonymy (kināya) for the negation of the explanation and the proof."},
+    {"type": "pair",
+     "ar": "فالمعنى هنا ما لا يكون جزءا إلا مع الصلة.",
+     "en": "So the meaning here is: that which is not a part except together with the relative clause."},
+
+    # ---------------- Footnote 2 ----------------
+    {"type": "note", "num": "٢"},
+    {"type": "pair",
+     "ar": "حمل الشيخ الرضي الجزء التام على ركن الكلام كما ينساق إليه الفهم أولا.",
+     "en": "Shaykh al-Raḍī took “complete part” to mean a pillar (rukn) of the utterance, as the understanding is first led to it."},
+    {"type": "pair",
+     "ar": "وقال: معناه: أن الموصول هو الذي لو أردت أن تجعله جزء الجملة لم يكن إلا بصلة، هذا هو الحق،",
+     "en": "He said: its meaning is that the relative noun is that which, if you wished to make it a part of the sentence, would not be so except with a relative clause. This is the truth;"},
+    {"type": "pair",
+     "ar": "ولكن لا وجه للتخصيص؛ إذ لو أردت أن تجعله فضلة لم يكن إلا بصلة،",
+     "en": "but there is no ground for the restriction, since if you wished to make it a complement (faḍla), it likewise would not be so except with a relative clause."},
+    {"type": "pair",
+     "ar": "فلهذا صرف الشارح قدس سره الجزء التام عن ظاهره.",
+     "en": "For this reason the Commentator, may his secret be sanctified, turned “complete part” away from its apparent sense."},
+
+    # ---------------- Footnote 3 ----------------
+    {"type": "note", "num": "٣"},
+    {"type": "pair",
+     "ar": "كذا نسب إلى المصنف. وفيه أن ألفاظ التعريف محمولة على معانيها المتبادرة. ولا خفاء في أن المتبادر معناها العرفي.",
+     "en": "Thus it has been attributed to the author. Against it: the words of a definition are taken in their immediately understood meanings, and there is no doubt that what is immediately understood is its conventional meaning."},
+    {"type": "pair",
+     "ar": "قيل: لو قال: بجملة خبرية، وضمير له لكان أخصر وأوضح، لكنه سلك طريق الإجمال أولا، والتفصيل ثانيا، أو قصد بيان الاسم المصطلح عليه بتلك الجملة والضمير.",
+     "en": "It has been said: had he said “with a declarative sentence and a pronoun [referring] to it”, it would have been more concise and clearer; but he took the way of summary first and detail second, or he intended to explain the noun technically named by that sentence and pronoun."},
+    {"type": "pair",
+     "ar": "وفيه أن مقام التعريف يقتضي التفصيل لا الإجمال، ثم التفصيل في الخارج،",
+     "en": "Against it: the setting of a definition calls for detail, not summary, and then [comes] the detail outside [it];"},
+    {"type": "pair",
+     "ar": "وإن ذلك القصد مناف لما نقل عنه من أن المراد معناه اللغوي،",
+     "en": "and that intention conflicts with what is reported from him, that its lexical meaning is intended."},
+    {"type": "pair",
+     "ar": "نعم يجوز أن يقال: إنه قال ذلك إشارة إلى وجه التسمية بالموصول مع أن فيه موافقة ما مع القوم في اللفظ؛ لأنهم أخذوا الصلة العرفية في تعريفه.",
+     "en": "Yes, one may say that he said this to point to the reason for the name mawṣūl, besides its having some agreement in wording with the scholars, since they took the conventional ṣila into its definition."},
+
+    # ---------------- Footnote 4 ----------------
+    {"type": "note", "num": "٤"},
+    {"type": "pair",
+     "ar": "لا يقال: جاز أن يكون لإخراج الموصول الحرفي، وهو ما أول مع ما يليه من الجمل بمصدر، فإنه لا يحتاج إلى عائد؛",
+     "en": "It should not be said: it may serve to exclude the particle relative (al-mawṣūl al-ḥarfī), that is, what is interpreted together with the sentence following it as a verbal noun, since it does not need a returning pronoun;"},
+    {"type": "pair",
+     "ar": "لأنا نقول: هو خارج عن التعريف قبل ذكره؛ لأنه لا يكون جزءا تاما أصلا.",
+     "en": "for we say: it is excluded from the definition before this is mentioned, because it is never a complete part at all."},
+    {"type": "pair",
+     "ar": "نعم الجزء التام هو المؤول بالمصدر لا الحرف المصدري المنضم إليه الجملة كما في الموصول الاسمي.",
+     "en": "Indeed, the complete part is what is interpreted as a verbal noun, not the verbal-noun particle to which the sentence is joined, as is the case with the nominal relative."},
+]

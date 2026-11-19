@@ -1,0 +1,46 @@
+# On every merge to main: build every book and publish the files as a release.
+name: Release
+
+on:
+  push:
+    branches: [main]
+    paths: ["books/**", "engine/**"]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: release
+  cancel-in-progress: true
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r requirements.txt
+      - name: Build every book
+        run: |
+          mkdir -p dist
+          for b in books/*/; do
+            case "$b" in books/_*) continue ;; esac
+            python engine/check_page.py "$b"
+            python engine/build_docx.py "$b"
+            python engine/build_manuscript.py "$b"
+            cp "$b"build/*.pdf "$b"build/*.docx dist/
+            cp "$b"build/*_Review-Notes.md dist/ 2>/dev/null || true
+          done
+      - name: Publish release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: build-${{ github.run_number }}
+          name: Build ${{ github.run_number }}
+          body: |
+            Built from ${{ github.sha }}.
+            Each book: `_Manuscript.pdf` (A3, ḥawāshī in the margins), `_Translation.docx` (linear), `_Review-Notes.md` (readings to check, keyed to this release's PDF pages).
+          make_latest: true
+          files: dist/*

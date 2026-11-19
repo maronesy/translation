@@ -1,0 +1,348 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>al-Fawāʾid al-Ḍiyāʾiyya — manuscript edition</title>
+<style>
+@font-face { font-family: "Amiri"; src: url("{{FONTS}}/Amiri-Regular.ttf"); }
+@font-face { font-family: "Amiri"; font-weight: bold; src: url("{{FONTS}}/Amiri-Bold.ttf"); }
+@font-face { font-family: "EBG"; src: url("{{FONTS}}/EBGaramond.ttf"); font-weight: 400 800; }
+@font-face { font-family: "EBG"; font-style: italic; src: url("{{FONTS}}/EBGaramond-Italic.ttf"); }
+
+@page { size: 297mm 420mm; margin: 0; }
+:root {
+  --paper: #f3e8cf; --paper-in: #f8f0dd; --ink: #1d1a16; --gloss: #3a2614;
+  --en: #4a3f34; --red: #a3261c; --gold: #b8902f; --gold-l: #e3c76f;
+  --lapis: #1f3a73;
+}
+* { box-sizing: border-box; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+html, body { margin: 0; padding: 0; background: #888; }
+.sheet {
+  --s: 1; --sm: 1;
+  position: relative; width: 297mm; height: 420mm; overflow: hidden;
+  break-after: page;
+  background: radial-gradient(ellipse at 50% 45%, #f8eed8 0%, var(--paper) 62%, #e7d6b0 100%);
+}
+.border {
+  position: absolute; inset: 6mm; pointer-events: none;
+  border: 0.5mm solid var(--red);
+  box-shadow: inset 0 0 0 1.1mm var(--paper), inset 0 0 0 1.5mm var(--gold);
+}
+.pool { display: none; }
+
+/* ---- central frame (matn) ---- */
+.frame {
+  position: absolute; border: 0.6mm solid var(--red); padding: 1.1mm;
+  background: var(--paper-in);
+}
+.frame-in {
+  border: 1.1mm solid var(--gold); outline: 0.35mm solid var(--lapis);
+  outline-offset: -2mm; padding: 5mm 6.5mm 3mm;
+}
+.mp { margin-bottom: calc(var(--sm) * 2.6mm); }
+.mp .a {
+  font: calc(var(--sm) * 14.5pt)/1.75 "Amiri", serif; color: var(--ink);
+  text-align: justify; text-align-last: right;
+}
+.mp .e {
+  font: calc(var(--sm) * 10.6pt)/1.32 "EBG", serif; color: var(--en);
+  text-align: justify; hyphens: auto;
+}
+.mp.khutba .a { font-weight: bold; }
+.mp.verse .a, .mp.quran .a, .mp.verse .e, .mp.quran .e { text-align: center; text-align-last: center; }
+.mp.quran .a { color: var(--red); }
+.basmala {
+  text-align: center; font: bold calc(var(--sm) * 17pt)/1.6 "Amiri", serif;
+  color: var(--red); margin-bottom: 2mm;
+}
+sup.mk {
+  color: var(--red); font: bold 0.6em/0 "Amiri", serif; vertical-align: super;
+  margin: 0 0.2em;
+}
+.rub { color: var(--red); }
+
+/* ---- section cartouche ---- */
+.cartouche {
+  margin: 1mm auto calc(var(--sm) * 4mm); width: 88%; text-align: center;
+  background: var(--lapis); border: 0.5mm solid var(--gold-l);
+  outline: 0.9mm solid var(--gold); outline-offset: 0.6mm;
+  border-radius: 9mm; padding: 1.6mm 6mm 2mm;
+}
+.c-ar { font: bold calc(var(--sm) * 17pt)/1.5 "Amiri", serif; color: var(--gold-l); }
+.c-ar .rub { color: var(--gold-l); }
+.c-en {
+  font: calc(var(--sm) * 8.6pt)/1.2 "EBG", serif; color: #f1e3b5;
+  letter-spacing: 0.12em; font-variant: small-caps;
+}
+
+/* ---- ḥawāshī ---- */
+.region { position: absolute; overflow: hidden; }
+.note { margin-bottom: calc(var(--s) * 2.4mm); position: relative; }
+.note + .note { border-top: 0.25mm dotted rgba(184, 144, 47, 0.75); padding-top: calc(var(--s) * 1.6mm); }
+.nb {
+  float: right; margin: calc(var(--s) * 0.6mm) 0 0.6mm 1.4mm;
+  min-width: calc(var(--s) * 4.6mm); height: calc(var(--s) * 4.6mm);
+  border-radius: 50%; background: var(--red); color: #fbf0d0;
+  font: bold calc(var(--s) * 7.6pt)/calc(var(--s) * 4.6mm) "Amiri", serif;
+  text-align: center; padding: 0 0.6mm;
+}
+.nb.cont { background: none; color: var(--red); border: 0.3mm solid var(--red); }
+.np .a {
+  font: calc(var(--s) * 10pt)/1.58 "Amiri", serif; color: var(--gloss);
+  text-align: justify; text-align-last: right;
+}
+.np .e {
+  font: calc(var(--s) * 8.3pt)/1.24 "EBG", serif; color: var(--en);
+  text-align: justify; hyphens: auto; margin-bottom: calc(var(--s) * 1mm);
+}
+.corner { position: absolute; }
+.region.rot { overflow: hidden; font-size: 92%; }
+.region.rot .np .a { font-size: calc(var(--s) * 9.3pt); }
+.region.rot .np .e { font-size: calc(var(--s) * 7.7pt); }
+
+.folio small { font: 9pt/1 "EBG", serif; color: var(--en); }
+.folio {
+  position: absolute; bottom: 7.5mm; left: 50%; transform: translateX(-50%);
+  font: bold 13pt/1 "Amiri", serif; color: var(--red); white-space: nowrap;
+  padding: 1.2mm 5mm; border-top: 0.3mm solid var(--gold); border-bottom: 0.3mm solid var(--gold);
+}
+
+/* ---- cover & contents ---- */
+.cover-in, .toc-in { position: absolute; inset: 24mm 26mm; text-align: center; }
+.headpiece { width: 62%; margin: 30mm auto 8mm; display: block; }
+.cartouche.big { width: 78%; padding: 5mm 10mm 6mm; border-radius: 16mm; }
+.cartouche.big .c-ar { font-size: 40pt; }
+.cartouche.big .c-en { font-size: 17pt; }
+.cv1 { font: 15pt/1.4 "EBG", serif; color: var(--en); margin: 8mm 0 1mm; }
+.cv2 { font: italic 13pt/1.4 "EBG", serif; color: var(--en); margin: 1mm 0; }
+.cv3 { font: 14pt/1 "EBG", serif; color: var(--gold); letter-spacing: 0.6em; margin: 40mm 0 2mm; }
+.orn { font: 20pt/1 "Amiri", serif; color: var(--gold); margin: 10mm 0; letter-spacing: 0.5em; }
+.tlist { columns: 2; column-gap: 12mm; margin-top: 10mm; text-align: left; }
+.trow {
+  display: grid; grid-template-columns: 1fr auto; break-inside: avoid;
+  text-decoration: none; padding: 2mm 0; border-bottom: 0.25mm dotted var(--gold);
+}
+.t-ar { grid-column: 1 / 3; font: bold 14pt/1.5 "Amiri", serif; color: var(--ink); text-align: right; }
+.t-en { font: italic 11pt/1.3 "EBG", serif; color: var(--en); }
+.t-pg { font: bold 12pt/1.3 "Amiri", serif; color: var(--red); }
+</style>
+</head>
+<body>
+{{BODY}}
+<script>
+(async () => {
+  await document.fonts.ready;
+  const MM = 96 / 25.4;
+  const W = 297, H = 420, P = 13, SW = 72, G = 5, C = SW;
+  const BOT = H - P - 9;                 // leave room for the folio
+  const FX = P + SW + G, FW = W - 2 * FX;
+  const CW = 62;                          // line length of a diagonal corner note
+
+  const region = (sheet, cls, x, y, w, h) => {
+    const d = document.createElement("div");
+    d.className = "region " + cls;
+    Object.assign(d.style, { left: x + "mm", top: y + "mm", width: w + "mm", height: h + "mm" });
+    sheet.appendChild(d);
+    return d;
+  };
+  const over = r => r.scrollHeight > r.clientHeight + 1;
+
+  const shell = (num, cont) => {
+    const n = document.createElement("div");
+    n.className = "note";
+    const b = document.createElement("span");
+    const carried = !num || num === "…";
+    b.className = "nb" + (cont || carried ? " cont" : "");
+    b.textContent = carried ? "تتمة" : num;        // a ḥāshiya carried over from the previous page
+    n.appendChild(b);
+    return n;
+  };
+  const whole = note => {
+    const n = shell(note.dataset.num, false);
+    note.querySelectorAll(".np").forEach(p => n.appendChild(p.cloneNode(true)));
+    return n;
+  };
+
+  // Flow notes (pair by pair) through regions in order; return what is left.
+  function flow(notes, regions) {
+    let ri = 0;
+    for (let i = 0; i < notes.length; i++) {
+      const pairs = [...notes[i].querySelectorAll(".np")];
+      let k = 0, cont = false;
+      while (k < pairs.length) {
+        if (ri >= regions.length) return { left: notes.slice(i), from: k };
+        const reg = regions[ri];
+        const box = shell(notes[i].dataset.num, cont);
+        reg.appendChild(box);
+        let placed = 0;
+        while (k < pairs.length) {
+          box.appendChild(pairs[k].cloneNode(true));
+          if (over(reg)) { box.lastChild.remove(); break; }
+          k++; placed++;
+        }
+        if (!placed) { box.remove(); ri++; continue; }
+        if (k < pairs.length) { ri++; cont = true; }
+      }
+    }
+    return null;
+  }
+
+  // A corner square holding a block of gloss set diagonally across it.
+  const CH = Math.SQRT2 * C - CW - 3;
+  function corner(sheet, x, y, angle) {
+    const c = region(sheet, "corner", x, y, C, C);
+    c.style.overflow = "visible";
+    const r = document.createElement("div");
+    r.className = "region rot";
+    Object.assign(r.style, { left: "50%", top: "50%", width: CW + "mm", height: CH + "mm",
+      transform: `translate(-50%, -50%) rotate(${angle}deg)` });
+    c.appendChild(r);
+    return r;
+  }
+
+  function attempt(sheet, s, final, capH) {
+    sheet.querySelectorAll(".region").forEach(r => r.remove());
+    sheet.style.setProperty("--s", s);
+    const frame = sheet.querySelector(".frame");
+    const fh = frame.offsetHeight / MM;
+    const fy = Math.max(P, P + (BOT - P - fh) / 2);   // frame centred vertically
+    frame.style.top = fy + "mm";
+
+    // Corners: each takes the first whole note that fits, set diagonally, as
+    // in glossed manuscripts. A corner left empty goes to its side column.
+    let notes = [...sheet.querySelectorAll(".pool .note")];
+    const used = {};
+    for (const [key, x, y, a] of [["tr", W - P - C, P, -45], ["br", W - P - C, BOT - C, 45],
+                                  ["tl", P, P, 45], ["bl", P, BOT - C, -45]]) {
+      const r = corner(sheet, x, y, a);
+      const pick = notes.find(n => {
+        const w = whole(n);
+        r.appendChild(w);
+        if (!over(r) && w.offsetHeight >= 0.3 * r.clientHeight) return true;   // no stray one-liners
+        w.remove();
+        return false;
+      });
+      if (pick) { notes = notes.filter(n => n !== pick); used[key] = true; }
+      else r.parentNode.remove();
+    }
+    const col = (x, t, b) => {
+      const y0 = used[t] ? P + C + G : P, y1 = used[b] ? BOT - C - G : BOT;
+      return region(sheet, "side", x, y0, SW, Math.min(y1 - y0, capH || 1e9));
+    };
+    // Reading order: right column, left column, then the bands above and below.
+    const regs = [col(W - P - SW, "tr", "br"), col(P, "tl", "bl")];
+    if (!capH && fy - G - P > 12) regs.push(region(sheet, "band", FX, P, FW, fy - G - P));
+    if (!capH && BOT - (fy + fh + G) > 12) regs.push(region(sheet, "band", FX, fy + fh + G, FW, BOT - (fy + fh + G)));
+    const rest = flow(notes, regs);
+    if (!rest) return true;
+    if (!final) return false;
+    // Still too much at the smallest size: continue on an extra sheet.
+    overflowSheet(sheet, rest);
+    return true;
+  }
+
+  function overflowSheet(sheet, rest) {
+    const x = document.createElement("section");
+    x.className = "sheet";
+    x.dataset.printed = sheet.dataset.printed;
+    x.dataset.of = sheet.dataset.pdf;
+    x.style.setProperty("--s", sheet.style.getPropertyValue("--s"));
+    x.innerHTML = '<div class="border"></div><div class="folio">' +
+      sheet.dataset.printed + " <small>(ḥawāshī cont.)</small></div>";
+    sheet.after(x);
+    const regs = [region(x, "side", W / 2 + 4, P + 4, W / 2 - P - 8, BOT - P - 8),
+                  region(x, "side", P + 4, P + 4, W / 2 - P - 8, BOT - P - 8)];
+    const first = rest.left[0];
+    const tail = first.cloneNode(true);
+    [...tail.querySelectorAll(".np")].slice(0, rest.from).forEach(p => p.remove());
+    flow([tail, ...rest.left.slice(1)], regs);
+  }
+
+  // A matn too long for one frame at full size continues on further sheets
+  // (split between sentences); each ḥāshiya moves with the sentence that
+  // carries its marker. Nothing in the matn is shrunk.
+  const MAXF = BOT - P - 8;
+  // Divide the matn evenly over as few sheets as hold it at full size.
+  function splitPage(sheet) {
+    const frame = sheet.querySelector(".frame"), inner = frame.querySelector(".frame-in");
+    frame.style.left = FX + "mm"; frame.style.width = FW + "mm";
+    sheet.style.setProperty("--sm", 1);
+    const F = frame.offsetHeight / MM, blocks = [...inner.children];
+    if (F <= MAXF || blocks.length < 2) return;
+    const tops = blocks.map(e => e.getBoundingClientRect().top / MM);
+    const end = inner.getBoundingClientRect().bottom / MM;
+    const h = tops.map((t, i) => (i + 1 < tops.length ? tops[i + 1] : end) - t);
+    const O = F - h.reduce((x, y) => x + y, 0);          // frame padding and rules
+    const groups = cap => {
+      const g = [[]]; let sum = 0;
+      h.forEach((x, i) => {
+        if (g[g.length - 1].length && sum + x > cap - O) { g.push([]); sum = 0; }
+        g[g.length - 1].push(i); sum += x;
+      });
+      return g;
+    };
+    const k = groups(MAXF).length;
+    let lo = F / k, hi = MAXF;
+    while (hi - lo > 1) { const mid = (lo + hi) / 2; if (groups(mid).length <= k) hi = mid; else lo = mid; }
+    const parts = groups(hi);
+    let prev = sheet;
+    parts.slice(1).forEach(idx => {
+      const x = sheet.cloneNode(false);
+      x.innerHTML = '<div class="border"></div><div class="frame"><div class="frame-in"></div></div>' +
+        '<div class="pool"></div><div class="folio"></div>';
+      x.querySelector(".folio").innerHTML = sheet.dataset.printed + ' <small>(cont.)</small>';
+      prev.after(x); prev = x;
+      const xin = x.querySelector(".frame-in");
+      idx.forEach(i => xin.appendChild(blocks[i]));
+      const moved = new Set([...xin.querySelectorAll("sup.mk")].map(e => e.textContent));
+      sheet.querySelectorAll(".pool .note").forEach(n => {
+        if (moved.has(n.dataset.num)) x.querySelector(".pool").appendChild(n);
+      });
+    });
+  }
+  [...document.querySelectorAll(".sheet[data-pdf]")].forEach(splitPage);
+
+  for (const sheet of document.querySelectorAll(".sheet[data-pdf]")) {
+    sheet.style.setProperty("--sm", 1);
+    const fr = sheet.querySelector(".frame");
+    fr.style.left = FX + "mm"; fr.style.width = FW + "mm";
+    let ok = false;
+    // The ḥawāshī shrink at most to 90%; beyond that they continue on a further sheet.
+    for (let s = 1.36; s >= 0.9 && !ok; s = +(s - 0.04).toFixed(2)) ok = attempt(sheet, s, false);
+    if (!ok) attempt(sheet, 0.9, true);
+    // Light gloss (fits at the largest size): balance the two side columns by
+    // finding the shortest column height that still holds every note.
+    const s = +sheet.style.getPropertyValue("--s");
+    if (s >= 1.36) {
+      let lo = 20, hi = H;
+      while (hi - lo > 2) {
+        const mid = (lo + hi) / 2;
+        if (attempt(sheet, s, false, mid)) hi = mid; else lo = mid;
+      }
+      if (!attempt(sheet, s, false, hi)) attempt(sheet, s, false);
+    }
+    sheet.dataset.fit = sheet.style.getPropertyValue("--sm") + "/" + sheet.style.getPropertyValue("--s");
+  }
+  // Number every sheet by its position in the PDF, so the folio matches the
+  // viewer's page number; the source-book page is kept as a small label.
+  const AR = n => String(n).replace(/[0-9]/g, d => "٠١٢٣٤٥٦٧٨٩"[d]);
+  document.querySelectorAll(".sheet").forEach((sh, i) => {
+    sh.dataset.sheet = i + 1;
+    let f = sh.querySelector(".folio");
+    if (sh.classList.contains("cover")) return;
+    if (!f) { f = document.createElement("div"); f.className = "folio"; sh.appendChild(f); }
+    const extra = !sh.dataset.printed ? "" :
+      ` <small>(book p. ${sh.dataset.printed}${f.textContent.includes("ḥawāshī") ? ", ḥawāshī cont." :
+        f.textContent.includes("cont.") ? ", cont." : ""})</small>`;
+    f.innerHTML = (i + 1) + extra;
+  });
+  // Contents: point each entry at the PDF page where its heading falls.
+  document.querySelectorAll(".trow").forEach(a => {
+    const t = document.querySelector(a.getAttribute("href"));
+    if (t) a.querySelector(".t-pg").textContent = t.closest(".sheet").dataset.sheet;
+  });
+  document.body.dataset.done = "1";
+})();
+</script>
+</body>
+</html>

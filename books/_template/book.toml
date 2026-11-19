@@ -1,0 +1,29 @@
+# Book settings — read by every engine script. See docs/NEW-BOOK.md.
+
+slug = "your-slug"              # same as the folder name: lowercase, hyphens
+status = "proposal"             # proposal | in-progress | complete
+
+[title]
+ar = "عنوان الكتاب"
+en = "Short English title"
+subtitle_en = "One-line description, e.g. The Commentary of X on Y"
+field_en = "in the science of …"
+
+[author]
+ar = "اسم المؤلف"
+en = "Author name (d. AH/CE)"
+
+[source]
+# The printed edition you follow. Its scan is NEVER committed.
+edition = "Title, ed. Editor. City: Publisher, Year. ISBN …."
+pdf_offset = 0                  # scan PDF page = printed page + pdf_offset
+first_page = 1                  # first scan page translated
+last_page = 1                   # last scan page translated so far
+missing = []                    # printed pages absent from your scan, e.g. ["٢٨"]
+local_scan = "source/scan.pdf"  # where your own copy lives (git-ignored)
+
+[rules]
+diacritics = false              # true allows ḥarakāt in the Arabic
+
+[output]
+basename = "Your-Book"          # release files: Your-Book_Manuscript.pdf, …
