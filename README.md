@@ -14,7 +14,7 @@ it, or propose a new book. Maintainers review and approve every change.
 
 ## Download
 
-Get the books from the [Releases page](https://github.com/OWNER/REPO/releases/latest).
+Get the books from the [Releases page](https://github.com/maronesy/translation/releases/latest).
 Every release has three files for each book:
 
 | File | What it is |
@@ -58,7 +58,7 @@ flowchart LR
 ## Report a mistake (no git needed)
 
 1. Open a new issue and choose **Translation correction**
-   ([direct link](https://github.com/OWNER/REPO/issues/new?template=correction.yml)).
+   ([direct link](https://github.com/maronesy/translation/issues/new?template=correction.yml)).
 2. Fill in every field:
    - **Book**, and the **book page** printed on the sheet in brackets, e.g.
      `book p. ٣٠٥` (the PDF page alone is not enough, because it changes
@@ -81,8 +81,8 @@ If the report is not right, the maintainer explains why and closes the issue.
 
 1. **Fork** this repository on GitHub, then clone your fork:
    ```sh
-   git clone https://github.com/<you>/REPO.git
-   cd REPO
+   git clone https://github.com/<you>/translation.git
+   cd translation
    pip install -r requirements.txt
    ```
 2. **Create a branch** named `fix/<book>-p<book page>-<short-description>`:
@@ -118,7 +118,7 @@ If the report is not right, the maintainer explains why and closes the issue.
 ## Propose a new book
 
 1. **Open a proposal issue** — choose **New book proposal**
-   ([direct link](https://github.com/OWNER/REPO/issues/new?template=new-book.yml)).
+   ([direct link](https://github.com/maronesy/translation/issues/new?template=new-book.yml)).
    Give the title, author, the exact printed edition (publisher, year, ISBN)
    you will follow, the rights situation of that edition, and who will
    translate. Maintainers reply, and label the issue `book-accepted` if the

@@ -11,10 +11,17 @@
    - Require status checks to pass: **Check pages**;
    - Block force pushes and deletions;
    - Do not allow bypassing the above (so maintainers' own changes are reviewed too).
+
+   GitHub does not let anyone approve their own pull request. With a single
+   maintainer, pull requests that maintainer opens — including Claude's fixes,
+   which the maintainer opens from Claude's link — could never be merged. So:
+   add at least one more maintainer (write access, and listed in
+   `CODEOWNERS`), or, until then, allow repository admins to bypass the rule
+   and merge their own pull requests after the checks pass.
 3. **Merging** — *Settings → General → Pull Requests*: allow squash merging
    only; enable "Automatically delete head branches".
-4. **Code owners** — replace `@OWNER` in `.github/CODEOWNERS` with the
-   maintainers' GitHub usernames.
+4. **Code owners** — `.github/CODEOWNERS` lists the maintainers (currently
+   `@maronesy`); add each new maintainer there.
 5. **Claude** —
    - install the Claude GitHub App on the repository:
      https://github.com/apps/claude (or run `/install-github-app` in Claude Code);
@@ -26,7 +33,6 @@
    and write permissions" (the release workflow creates releases).
 7. **Labels** — create `correction`, `new-book`, `book-accepted`,
    `needs-photo`, `wontfix`.
-8. Replace `OWNER/REPO` in `README.md` with the real path.
 
 ## Handling a correction issue
 
