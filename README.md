@@ -49,10 +49,19 @@ flowchart LR
 - **Contributors** may work by hand or with any AI tool (see
   [Using AI tools](#using-ai-tools)). Either way, the contributor is
   responsible for every line, and the maintainer review is the same.
-- **Checks** run on every pull request: every page file must load, its
-  footnote markers must match its footnotes, and the Arabic must follow the
-  book's rules (for example, no diacritics). A preview PDF of the changed
-  pages is attached to the pull request's checks.
+- **Two checks must pass** before a pull request can be merged:
+  - **Check pages** — every page file loads, its footnote markers match its
+    footnotes, and the Arabic follows the book's rules (for example, no
+    diacritics);
+  - **Evidence** — a pull request that changes page files ticks the boxes
+    confirming the contributor checked each changed line against the printed
+    page and saying whether an AI tool was used; one that changes Arabic in
+    existing pages also carries a photo of the printed page.
+
+  Neither check can judge whether the Arabic matches the print or the English
+  is faithful; the maintainer's review does that, with the photo in front of
+  them. A preview PDF of the changed pages is attached to each pull request's
+  checks.
 
 ## Report a mistake (no git needed)
 
@@ -107,7 +116,10 @@ flowchart LR
    git push -u origin fix/mulla-jami-p305-yastamil
    ```
 7. **Open a pull request** against `main`. Fill in the template, and link the
-   issue it fixes (`Fixes #123`) if there is one.
+   issue it fixes (`Fixes #123`) if there is one. Tick the boxes. If you
+   changed Arabic, drag a photo of the printed passage into the description,
+   unless the linked issue already has one — the **Evidence** check fails
+   without it. If it fails, edit the description; the check re-runs.
 8. A maintainer reviews it. Answer any requested changes by pushing more
    commits to the same branch. Once the checks pass and a maintainer approves,
    it is merged.

@@ -55,7 +55,9 @@ contributor what you changed so they can check it.
 5. Report to the contributor, for each changed block, the old and new text and
    the evidence used. Suggest the commit message
    `<slug>: book p.<page> <where> — <what>` and `Fixes #<issue>` for the
-   pull request.
+   pull request. Remind them that the pull request's **Evidence** check needs
+   the template boxes ticked and, if Arabic changed, a photo of the printed
+   page in the pull request or the linked issue.
 
 ## Procedure: translating new pages
 

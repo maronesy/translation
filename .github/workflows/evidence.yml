@@ -1,0 +1,32 @@
+# "Evidence": a pull request that changes page files must carry the evidence a
+# reviewer needs — the verification and AI-disclosure boxes ticked, and, if it
+# changes Arabic in existing pages, a photo of the printed page in the pull
+# request or the issue it fixes. Re-runs when the description is edited.
+# See engine/check_evidence.py.
+name: Evidence
+
+on:
+  pull_request:
+    types: [opened, edited, synchronize, reopened]
+
+permissions:
+  contents: read
+  issues: read
+  pull-requests: read
+
+jobs:
+  evidence:
+    name: Evidence
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Check evidence
+        env:
+          PR_BODY: ${{ github.event.pull_request.body }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python engine/check_evidence.py "origin/${{ github.base_ref }}"
