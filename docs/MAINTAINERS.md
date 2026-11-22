@@ -13,8 +13,7 @@
    - Do not allow bypassing the above (so maintainers' own changes are reviewed too).
 
    GitHub does not let anyone approve their own pull request. With a single
-   maintainer, pull requests that maintainer opens — including Claude's fixes,
-   which the maintainer opens from Claude's link — could never be merged. So:
+   maintainer, pull requests that maintainer opens could never be merged. So:
    add at least one more maintainer (write access, and listed in
    `CODEOWNERS`), or, until then, allow repository admins to bypass the rule
    and merge their own pull requests after the checks pass.
@@ -22,31 +21,32 @@
    only; enable "Automatically delete head branches".
 4. **Code owners** — `.github/CODEOWNERS` lists the maintainers (currently
    `@maronesy`); add each new maintainer there.
-5. **Claude** —
-   - install the Claude GitHub App on the repository:
-     https://github.com/apps/claude (or run `/install-github-app` in Claude Code);
-   - add the repository secret `ANTHROPIC_API_KEY` (*Settings → Secrets and
-     variables → Actions*). Usage is billed to that key;
-   - only users with write access can trigger Claude; keep write access to
-     maintainers.
-6. **Actions** — *Settings → Actions → General → Workflow permissions*: "Read
+5. **Actions** — *Settings → Actions → General → Workflow permissions*: "Read
    and write permissions" (the release workflow creates releases).
-7. **Labels** — create `correction`, `new-book`, `book-accepted`,
-   `needs-photo`, `wontfix`.
+6. **Labels** — create `correction`, `confirmed`, `new-book`,
+   `book-accepted`, `needs-photo`, `wontfix`.
 
 ## Handling a correction issue
 
 1. Check the report against the printed edition. For an Arabic change, a
    photo of the printed page must be in the issue; if it is not, add
    `needs-photo` and ask for one.
-2. If the report is right, comment `@claude fix this` (add any precision, e.g.
-   which reading to adopt). Claude replies with what it changed and a link to
-   open the pull request.
-3. Open the pull request from the link. Wait for **Check pages** and **Build
-   preview**; download the preview artifact and look at the changed sheet.
+2. If the report is right, label it `confirmed`. Anyone may then submit the
+   fix as a pull request; a maintainer may also prepare it (by hand or with an
+   AI tool of their choice — the project runs none).
+3. Review the pull request: wait for **Check pages** and **Build preview**,
+   download the preview artifact, and check the changed sheet and the Arabic
+   against the photo.
 4. Approve and squash-merge. The issue closes through `Fixes #…`, and the
    release workflow publishes a new build.
 5. If the report is wrong, explain why, label `wontfix`, and close.
+
+## Reviewing AI-assisted pull requests
+
+Review them like any other, with extra attention to the Arabic: compare every
+changed Arabic string with the printed page, look for silently corrected
+misprints, and for edits outside the stated scope. Close pull requests that
+show unverified machine output.
 
 ## Reviewing a new book
 

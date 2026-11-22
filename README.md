@@ -30,10 +30,10 @@ links always point to the latest one.
 
 ```mermaid
 flowchart LR
-    A[Reader finds a mistake] -->|opens a Correction issue| B[Maintainer checks it]
-    B -->|comments @claude| C[Claude prepares the fix on a branch]
-    D[Contributor fixes it directly] -->|pull request| E
-    C -->|maintainer opens the PR| E[Pull request]
+    A[Reader finds a mistake] -->|opens a Correction issue| B[Maintainer confirms it]
+    B -->|label: confirmed| C[Anyone prepares the fix]
+    D[Contributor, with or without<br/>an AI tool] -->|pull request| E
+    C -->|pull request| E[Pull request]
     E --> F{Checks pass and a<br/>maintainer approves?}
     F -->|yes| G[Merged into main]
     F -->|no| H[Changes requested]
@@ -42,18 +42,17 @@ flowchart LR
 ```
 
 - **`main` is protected.** Nothing reaches it except through a pull request
-  that passes the automatic checks and is approved by a maintainer.
-- **Maintainers** are the people with write access to this repository. Only
-  they can approve and merge pull requests, and only they can ask Claude to
-  prepare a fix.
-- **Claude** (Anthropic's AI model, through the
-  [Claude GitHub Action](https://github.com/anthropics/claude-code-action))
-  drafts fixes when a maintainer asks. Its work goes through the same pull
-  request and approval as anyone else's.
+  that passes the automatic checks and is approved by a maintainer. No one
+  else can merge.
+- **Maintainers** are the people with write access to this repository. They
+  review every pull request against the printed edition before approving it.
+- **Contributors** may work by hand or with any AI tool (see
+  [Using AI tools](#using-ai-tools)). Either way, the contributor is
+  responsible for every line, and the maintainer review is the same.
 - **Checks** run on every pull request: every page file must load, its
   footnote markers must match its footnotes, and the Arabic must follow the
-  book's rules (for example, no diacritics). A preview PDF of each changed
-  book is attached to the pull request's checks.
+  book's rules (for example, no diacritics). A preview PDF of the changed
+  pages is attached to the pull request's checks.
 
 ## Report a mistake (no git needed)
 
@@ -68,14 +67,12 @@ flowchart LR
    - **Correction**: what it should say, and why;
    - **Photo of the printed page** if the Arabic transcription is in question.
      Arabic is only changed against the printed text, never from memory.
-3. A maintainer reads the report. If it is right, they comment `@claude fix this`
-   on the issue. Claude edits the page file, runs the checks, pushes a branch
-   and replies with a link to open the pull request.
-4. The maintainer opens that pull request, reviews it against the preview PDF,
-   and approves and merges it. The issue closes automatically and the next
-   release includes the fix.
-
-If the report is not right, the maintainer explains why and closes the issue.
+3. A maintainer checks the report. If it is right, they label it `confirmed`;
+   if not, they explain why and close it.
+4. A confirmed correction is fixed by a pull request — from the reporter,
+   any other contributor, or a maintainer — following the next section. The
+   pull request links the issue (`Fixes #123`), so the issue closes when it is
+   merged and the next release includes the fix.
 
 ## Fix a mistake yourself (pull request)
 
@@ -148,6 +145,31 @@ If the report is not right, the maintainer explains why and closes the issue.
    `book/<slug>-pp<first>-<last>` and open one pull request per batch.
    Set `status = "complete"` in the pull request that finishes the book.
 
+## Using AI tools
+
+You may use any AI assistant to help transcribe, translate or correct pages —
+for example Claude Code, OpenAI Codex, GitHub Copilot, Cursor or Gemini — or
+none. The project does not run or pay for any AI service; you use your own.
+
+1. Clone the repository (see above) and open it in your tool.
+2. Point the tool at **[AGENTS.md](AGENTS.md)**: it gives the rules and
+   procedures an AI assistant must follow here. Many tools read `AGENTS.md`
+   automatically; Claude Code reads it through `CLAUDE.md`. For other tools,
+   tell the assistant to read `AGENTS.md` and `docs/TRANSLATION-GUIDE.md`
+   before it edits anything.
+3. Give it the printed page: your own scan (rendered at high resolution with
+   `python engine/hires_page.py books/<slug> <scan page>`) or a photo. An
+   assistant must never supply Arabic from memory.
+4. **Check its work yourself** against the printed page, line by line, and
+   run `python engine/check_page.py books/<slug>`. AI tools misread dense
+   Arabic, "correct" misprints silently and paraphrase; you are responsible
+   for catching that.
+5. Open the pull request as usual and **say which tool you used** in the
+   pull-request template.
+
+Maintainers review AI-assisted pull requests exactly as others, and close
+pull requests that show signs of unverified machine output.
+
 ## Working locally
 
 You need Python 3.11 or later, Google Chrome or Chromium (for the PDF), and
@@ -179,7 +201,8 @@ books/
 engine/                   build and check scripts, page template, fonts
 docs/                     translation guide, new-book guide, maintainer guide
 .github/                  issue forms, pull-request template, workflows
-CLAUDE.md                 instructions Claude follows in this repository
+AGENTS.md                 rules for AI assistants (any tool)
+CLAUDE.md                 points Claude Code to AGENTS.md
 ```
 
 ## Sources and rights

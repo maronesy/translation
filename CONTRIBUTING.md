@@ -12,7 +12,6 @@ pull requests are reviewed against.
 | New book (proposal and sample) | `book/<slug>` | `New book: <title>` |
 | Further pages of a book | `book/<slug>-pp<first>-<last>` | `<book>: book pp.<first>–<last>` |
 | Engine, docs, workflows | `engine/<short>`, `docs/<short>` | short description |
-| Fix prepared by Claude | `claude/…` (created by the action) | set by the maintainer |
 
 - One pull request per correction or per batch of pages. Do not mix a
   correction with unrelated edits.
@@ -42,7 +41,7 @@ pull requests are reviewed against.
 ## Review
 
 - A pull request needs **one approving review from a maintainer** and passing
-  checks before it can be merged. Maintainers do not approve their own pull
+  checks before it can be merged. Only maintainers can merge. Maintainers do not approve their own pull
   requests; another maintainer does.
 - The reviewer checks the changed sheets in the preview PDF attached to the
   pull request's checks (under *Artifacts*), and the Arabic against the
@@ -51,28 +50,24 @@ pull requests are reviewed against.
   statement, at least five consecutive sample pages that pass the checks, and
   translation quality in a spot check of those pages.
 
-## Asking Claude for a fix (maintainers)
+## AI-assisted contributions
 
-Comment `@claude` on an issue or pull request, for example:
+Any AI tool may be used; the project neither requires nor provides one.
 
-> @claude fix this
-
-> @claude book p.٣٠٥ fn ٦ — the photo above shows «يستعمل»; please correct the transcription
-
-Claude follows [CLAUDE.md](CLAUDE.md): it reads the issue, checks the photo of
-the printed page, edits only the affected blocks, runs the checks, pushes a
-branch named `claude/…`, and replies with a link to open the pull request. It
-will not change Arabic it cannot verify against the printed text; it will ask
-instead. Its pull requests are reviewed like any other.
-
-Only people with write access can trigger Claude. Each run uses the project's
-Anthropic API key and is billed to it.
+- The tool must follow [AGENTS.md](AGENTS.md); point it there before it edits.
+- You, not the tool, are the author. Check every changed line against the
+  printed page before you open the pull request.
+- Say in the pull-request template which tool you used and for what.
+- Pull requests that show signs of unverified machine output — Arabic that
+  does not match the print, silently "corrected" misprints, paraphrase,
+  unrelated edits — are closed.
 
 ## Labels
 
 | Label | Meaning |
 |---|---|
 | `correction` | A reported mistake (set by the issue form) |
+| `confirmed` | A maintainer has checked the report; anyone may submit the fix |
 | `new-book` | A book proposal (set by the issue form) |
 | `book-accepted` | The proposal was accepted; the sample may be submitted |
 | `needs-photo` | A photo of the printed page is needed before the Arabic can change |

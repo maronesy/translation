@@ -6,7 +6,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        Thank you. Please fill in every field. The **book page** is the number printed in brackets at the foot of each PDF sheet, e.g. `(book p. ٣٠٥)`. The PDF page alone is not enough, because it changes between releases.
+        Thank you. Please fill in every field. A maintainer will check the report; once it is labelled `confirmed`, anyone (including you) may submit the fix as a pull request — see the README. The **book page** is the number printed in brackets at the foot of each PDF sheet, e.g. `(book p. ٣٠٥)`. The PDF page alone is not enough, because it changes between releases.
   - type: dropdown
     id: book
     attributes:
