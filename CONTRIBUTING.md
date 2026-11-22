@@ -16,13 +16,23 @@ pull requests are reviewed against.
 - One pull request per correction or per batch of pages. Do not mix a
   correction with unrelated edits.
 - Link the issue it resolves with `Fixes #<number>`.
-- Pull requests are squash-merged. The squash commit message uses the pull
-  request title.
+- **Merge method.** Corrections, docs and engine changes are
+  **squash-merged**: one commit on `main`, titled with the pull request title.
+  Batches of new pages are **merged with a merge commit** when their commits
+  are tidy (one per page or per few pages, with clear messages), so a single
+  page can later be traced or reverted; otherwise they are squash-merged too.
+  Rebase-merging is not used.
 
 ## What a pull request must satisfy
 
-1. **The checks pass** (`python engine/check_page.py books/<slug>`): every page
-   loads, footnote markers match footnotes, and the book's rules hold.
+1. **The checks pass.** *Check pages* (`python engine/check_page.py
+   books/<slug>`): every page loads, footnote markers match footnotes, and
+   the book's rules hold. *Evidence* (`engine/check_evidence.py`): when page
+   files change, the description ticks "I checked every changed line against
+   the printed page myself" and one AI-tools box; when Arabic in existing
+   pages changes, a photo of the printed page is in the description or the
+   linked issue. New pages of a book batch need the boxes, not a photo per
+   page.
 2. **The Arabic is what the edition prints.** A change to the Arabic must be
    supported by the printed page: a photo in the issue or pull request, or the
    reviewer's own copy. Misprints are kept as printed and marked with a
