@@ -26,6 +26,29 @@ Every release has three files for each book:
 A new release is published automatically each time a change is merged. The
 links always point to the latest one.
 
+## What the books look like
+
+The manuscript edition of *Sharḥ Mullā Jāmī*, from the latest release:
+
+| Cover | The opening of the commentary (book p. ٢٣) |
+|---|---|
+| <img src="docs/images/mulla-jami-cover.png" alt="Cover of the manuscript edition of Sharḥ Mullā Jāmī" width="340"> | <img src="docs/images/mulla-jami-sheet.png" alt="A full sheet: the matn in a ruled central frame, the ḥawāshī in Arabic and English around it" width="440"> |
+
+Each sheet sets the main text (*matn*) in a ruled central frame and its glosses
+(*ḥawāshī*) around it, as in a glossed manuscript. Every Arabic sentence is
+followed by its English.
+
+<img src="docs/images/mulla-jami-detail-frame.png" alt="Close-up: the section heading, the basmala and the first lines of the matn with red footnote markers; beside it a footnote in Arabic and English" width="760">
+
+*Close-up of the frame:* the section heading, the basmala, and the first
+lines of the matn, each followed by its English. The red superscript numbers
+mark the words the footnotes gloss; the glosses run in the margin beside it.
+
+<img src="docs/images/mulla-jami-detail-corner.png" alt="Close-up: a short footnote set diagonally in the top corner, and numbered footnotes in the margin" width="760">
+
+*Close-up of the margins:* short glosses are set diagonally in the corners,
+the others in columns, each with its number in a red roundel.
+
 ## How the project works
 
 ```mermaid
