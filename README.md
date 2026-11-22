@@ -46,9 +46,14 @@ flowchart LR
   else can merge.
 - **Maintainers** are the people with write access to this repository. They
   review every pull request against the printed edition before approving it.
-- **Contributors** may work by hand or with any AI tool (see
-  [Using AI tools](#using-ai-tools)). Either way, the contributor is
-  responsible for every line, and the maintainer review is the same.
+- **Contributors** work in one of two ways. They can read the printed page
+  and type the Arabic and English into the page file themselves, in a text
+  editor, using the project's scripts to read the scan, check the file and
+  preview the result (see [Editing pages without AI](#editing-pages-without-ai)).
+  Or they can have an AI assistant draft the edit and then verify it (see
+  [Using AI tools](#using-ai-tools)). The scripts do not translate; in both
+  cases the contributor is responsible for every line, and the maintainer
+  review is the same.
 - **Two checks must pass** before a pull request can be merged:
   - **Check pages** — every page file loads, its footnote markers match its
     footnotes, and the Arabic follows the book's rules (for example, no
@@ -156,6 +161,47 @@ flowchart LR
 7. **Continue in batches.** Translate further pages on branches named
    `book/<slug>-pp<first>-<last>` and open one pull request per batch.
    Set `status = "complete"` in the pull request that finishes the book.
+
+## Editing pages without AI
+
+Each page of the edition is one plain-text Python file,
+`books/<slug>/pages/page_NNN.py`, holding a list of blocks: each sentence of
+the main text, and of every footnote, as its Arabic with its English. You
+edit these files directly. The full format is in
+[docs/TRANSLATION-GUIDE.md](docs/TRANSLATION-GUIDE.md); a finished example is
+[books/mulla-jami/pages/page_024.py](books/mulla-jami/pages/page_024.py).
+A block looks like this:
+
+```python
+{"type": "matn",
+ "ar": "المعنى يتوجهان إليه[[١]]، ويصح أن يكون هو مع وقوعه في ذلك الموضع[[٢]] معمولا لكل واحد منهما على البدل[[٣]].",
+ "en": "…in respect of meaning are directed toward it; and it is valid that it … be governed by each one of the two [verbs] by way of alternation (ʿalā al-badal)."},
+```
+
+What you need:
+
+- **A text editor that handles Arabic**, e.g. [VS Code](https://code.visualstudio.com/)
+  (free). Arabic and English sit on the same line, so the editor must show
+  right-to-left text correctly.
+- **An Arabic keyboard layout**, enabled in your operating system's keyboard
+  settings, for typing Arabic. Type the letters only: no diacritics in books
+  that forbid them.
+- **Python 3.11+** and the project's requirements, to run the scripts below
+  (see [Working locally](#working-locally)).
+
+The scripts, and what each does for you:
+
+| Script | Does |
+|---|---|
+| `python engine/hires_page.py books/<slug> <scan page>` | Renders a page of **your own scan** in high-resolution strips, so dense footnotes are legible. It reads; it does not transcribe. |
+| `python engine/check_page.py books/<slug> <scan page>` | Checks the file: it loads, footnote markers match footnotes, no forbidden diacritics. Run it after every edit. |
+| `python engine/build_manuscript.py books/<slug> <scan page>` | Builds a PDF of just that page in the manuscript layout, so you can see your edit as readers will. |
+| `python engine/build_docx.py books/<slug> <scan page>` | The same, as a Word file. |
+
+A typical correction: find the page file (see step 3 of
+[Fix a mistake yourself](#fix-a-mistake-yourself-pull-request)), change the
+Arabic or English of the block concerned, run `check_page.py`, look at the
+page with `build_manuscript.py`, then commit and open the pull request.
 
 ## Using AI tools
 
