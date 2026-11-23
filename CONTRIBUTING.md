@@ -50,9 +50,10 @@ pull requests are reviewed against.
 
 ## Review
 
-- A pull request needs **one approving review from a maintainer** and passing
-  checks before it can be merged. Only maintainers can merge. Maintainers do not approve their own pull
-  requests; another maintainer does.
+- A pull request needs **approving reviews from two reviewers** (maintainers)
+  and passing checks before it can be merged; it is merged only if both agree
+  with the change. Only maintainers can merge. A maintainer's own pull request
+  needs two other reviewers.
 - The reviewer checks the changed sheets in the preview PDF attached to the
   pull request's checks (under *Artifacts*), and the Arabic against the
   printed page.

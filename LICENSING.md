@@ -1,9 +1,12 @@
 # Which license covers what
 
+The repository's main license, shown by GitHub, is CC BY-SA 4.0, because the
+translations are the project's main product. The code is under MIT.
+
 | Part of the repository | License | Text |
 |---|---|---|
-| Translations, transcriptions and notes in `books/` | Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) | [LICENSE-CC-BY-SA-4.0.txt](LICENSE-CC-BY-SA-4.0.txt) |
-| Code in `engine/` and `.github/` | MIT | [LICENSE](LICENSE) |
+| Translations, transcriptions and notes in `books/` | Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0) | [LICENSE](LICENSE) |
+| Code in `engine/` and `.github/` | MIT | [LICENSE-MIT](LICENSE-MIT) |
 | Fonts in `engine/fonts/` | SIL Open Font License 1.1 | [engine/fonts/README.md](engine/fonts/README.md) |
 
 The contents of `books/` are © 2026 Alkalam Institute and contributors. You

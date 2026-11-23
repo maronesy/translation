@@ -5,7 +5,7 @@
 1. **Create the repository** (public) and push this project to `main`.
 2. **Protect `main`** — *Settings → Branches → Add branch ruleset* (or *branch
    protection rule*) for `main`:
-   - Require a pull request before merging, with **1 approval**;
+   - Require a pull request before merging, with **2 approvals**;
    - Dismiss stale approvals when new commits are pushed;
    - Require review from Code Owners;
    - Require status checks to pass: **Check pages** and **Evidence** (each
@@ -13,11 +13,12 @@
    - Block force pushes and deletions;
    - Do not allow bypassing the above (so maintainers' own changes are reviewed too).
 
-   GitHub does not let anyone approve their own pull request. With a single
-   maintainer, pull requests that maintainer opens could never be merged. So:
-   add at least one more maintainer (write access, and listed in
-   `CODEOWNERS`), or, until then, allow repository admins to bypass the rule
-   and merge their own pull requests after the checks pass.
+   Two reviewers must approve each pull request, and GitHub does not let
+   anyone approve their own. The project therefore needs at least two
+   reviewers with write access, listed in `CODEOWNERS` (three, for reviewers'
+   own pull requests). Until there are enough, the repository admin can merge
+   through the ruleset's bypass, set to "For pull requests only" so that
+   direct pushes to `main` stay blocked.
 3. **Merging** — in the ruleset, allow the **Merge** and **Squash** methods
    (not Rebase); in *Settings → General → Pull Requests* enable
    "Automatically delete head branches". Use squash for corrections, docs and
