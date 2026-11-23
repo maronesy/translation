@@ -2,7 +2,7 @@
 
 These rules apply to any AI tool working in this repository (Claude Code,
 Codex, Copilot, Cursor, Gemini or others). The person running you is a
-contributor; their pull request will be reviewed by a maintainer against the
+contributor; their pull request will be reviewed by two reviewers against the
 printed edition. Make exactly the change asked for, correctly, and show the
 contributor what you changed so they can check it.
 
@@ -72,4 +72,4 @@ contributor what you changed so they can check it.
 
 - invent or "restore" Arabic you cannot see on the printed page;
 - merge, approve, or push to `main`; changes reach `main` only through a
-  pull request approved by a maintainer.
+  pull request approved by two reviewers.

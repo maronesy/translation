@@ -10,7 +10,7 @@
   اعتنى به إلياس قيلان. Istanbul: Şifa Yayınevi, 2015. ISBN 978-605-84063-1-5.
   The matn of the commentary is printed with numbered ḥawāshī beneath it; both
   are transcribed and translated. The scan is not included.
-- **Status:** complete — book pp. ٢٣–٥٩٩, from Jāmī's opening to his colophon
+- **Status:** first full draft, under revision — book pp. ٢٣–٥٩٩, from Jāmī's opening to his colophon
   (dated Saturday, 11 Ramaḍān 897). The indices that follow are not
   translated.
 - **Gap:** book p. ٢٨ is missing from the scan used (a blank leaf). A

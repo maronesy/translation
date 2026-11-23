@@ -2,17 +2,47 @@
 
 *A project of the [Alkalam Institute](https://alkalam.org).*
 
+## Why this project exists
+
+In our class on *Sharḥ Mullā Jāmī*, a question was raised: does translating
+an advanced text such as this one defeat its purpose? Such texts are meant for
+those who have reached the highest level of the discipline and have thereby
+earned the right to read them.
+
+After a long discussion, we concluded as follows. Whether or not we translate
+these texts, anyone can now translate them with AI, and their exclusivity to
+those who have earned the right to read them can no longer be kept. Those who
+have not earned that right will translate them in any case. It is therefore
+better that a group of scholars undertake the task and ensure that the
+translations are correct, than that anyone with access to AI translate a book
+and publish it without checking it, to the detriment of the Islamic
+intellectual tradition.
+
+This open-source project began for that reason. Its first product is the
+translation of *Sharḥ Mullā Jāmī*, which will need many rounds of revision
+before it is complete.
+
+We ask scholars and instructors to use the books translated here in their
+classes and to report the translation mistakes they find. They can also make
+the corrections themselves and submit them to this repository by following the
+instructions below. Each correction is reviewed by two reviewers and is
+incorporated only if both agree with it. In this way, scholars in every
+country can work together to produce translations of the highest quality of
+the books of the Islamic disciplines.
+
+## About
+
 Arabic–English translations of classical Islamic texts, edited in the open.
 Each book is translated sentence by sentence: the Arabic as printed in a named
 edition, with the English beneath it, for both the main text (*matn*) and its
 glosses (*ḥawāshī*). Anyone can download the books, report a mistake, correct
-it, or propose a new book. Maintainers review and approve every change.
+it, or propose a new book. Two reviewers approve every change.
 
 ## Books
 
 | Book | Author | Status | Pages | Download |
 |---|---|---|---|---|
-| [al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)](books/mulla-jami/) | ʿAbd al-Raḥmān al-Jāmī (d. 898/1492) | complete | book pp. ٢٣–٥٩٩ | [PDF](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Manuscript.pdf) · [Word](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Translation.docx) · [Review notes](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Review-Notes.md) |
+| [al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)](books/mulla-jami/) | ʿAbd al-Raḥmān al-Jāmī (d. 898/1492) | first full draft; under revision | book pp. ٢٣–٥٩٩ | [PDF](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Manuscript.pdf) · [Word](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Translation.docx) · [Review notes](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Review-Notes.md) |
 
 ## Download
 
@@ -66,7 +96,7 @@ flowchart LR
     B -->|label: confirmed| C[Anyone prepares the fix]
     D[Contributor, with or without<br/>an AI tool] -->|pull request| E
     C -->|pull request| E[Pull request]
-    E --> F{Checks pass and a<br/>maintainer approves?}
+    E --> F{Checks pass and two<br/>reviewers approve?}
     F -->|yes| G[Merged into main]
     F -->|no| H[Changes requested]
     H --> E
@@ -74,10 +104,11 @@ flowchart LR
 ```
 
 - **`main` is protected.** Nothing reaches it except through a pull request
-  that passes the automatic checks and is approved by a maintainer. No one
+  that passes the automatic checks and is approved by two reviewers. No one
   else can merge.
-- **Maintainers** are the people with write access to this repository. They
-  review every pull request against the printed edition before approving it.
+- **Reviewers** (maintainers) are the people with write access to this
+  repository. They review every pull request against the printed edition
+  before approving it; two must approve each one.
 - **Contributors** work in one of two ways. They can read the printed page
   and type the Arabic and English into the page file themselves, in a text
   editor, using the project's scripts to read the scan, check the file and
@@ -157,8 +188,8 @@ flowchart LR
    changed Arabic, drag a photo of the printed passage into the description,
    unless the linked issue already has one — the **Evidence** check fails
    without it. If it fails, edit the description; the check re-runs.
-8. A maintainer reviews it. Answer any requested changes by pushing more
-   commits to the same branch. Once the checks pass and a maintainer approves,
+8. Two reviewers review it. Answer any requested changes by pushing more
+   commits to the same branch. Once the checks pass and both approve,
    it is merged.
 
 ## Propose a new book
@@ -363,10 +394,10 @@ will remove it.
 ## License and credit
 
 - Translations and transcriptions (`books/`): **CC BY-SA 4.0**
-  ([full text](LICENSE-CC-BY-SA-4.0.txt)). Reuse them with credit to
+  ([full text](LICENSE)). Reuse them with credit to
   **Alkalam Open Translations — https://alkalam.org**, and share adaptations
   under the same license.
-- Code (`engine/`, `.github/`): **MIT** ([LICENSE](LICENSE)).
+- Code (`engine/`, `.github/`): **MIT** ([LICENSE-MIT](LICENSE-MIT)).
 - Fonts (`engine/fonts/`): SIL Open Font License 1.1 — see
   [engine/fonts/README.md](engine/fonts/README.md).
 
