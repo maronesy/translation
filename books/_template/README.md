@@ -1,5 +1,9 @@
 # <Book title>
 
+**Download (latest release):** [Manuscript PDF](https://github.com/maronesy/translation/releases/latest/download/<Basename>_Manuscript.pdf) ·
+[Word](https://github.com/maronesy/translation/releases/latest/download/<Basename>_Translation.docx)
+<!-- replace <Basename> with output.basename from book.toml -->
+
 - **Arabic title:** …
 - **Author:** … (d. …)
 - **Edition followed:** … (publisher, year, ISBN). The scan is not included;
