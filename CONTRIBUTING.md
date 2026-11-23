@@ -50,6 +50,9 @@ pull requests are reviewed against.
 
 ## Review
 
+Reviewers are the maintainers with write access; how to become one is in the
+README, under [Become a reviewer](README.md#become-a-reviewer).
+
 - A pull request needs **approving reviews from two reviewers** (maintainers)
   and passing checks before it can be merged; it is merged only if both agree
   with the change. Only maintainers can merge. A maintainer's own pull request

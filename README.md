@@ -108,7 +108,8 @@ flowchart LR
   else can merge.
 - **Reviewers** (maintainers) are the people with write access to this
   repository. They review every pull request against the printed edition
-  before approving it; two must approve each one.
+  before approving it; two must approve each one. See
+  [Become a reviewer](#become-a-reviewer).
 - **Contributors** work in one of two ways. They can read the printed page
   and type the Arabic and English into the page file themselves, in a text
   editor, using the project's scripts to read the scan, check the file and
@@ -224,6 +225,44 @@ flowchart LR
 7. **Continue in batches.** Translate further pages on branches named
    `book/<slug>-pp<first>-<last>` and open one pull request per batch.
    Set `status = "complete"` in the pull request that finishes the book.
+
+## Become a reviewer
+
+Every change is approved by two reviewers before it is merged, so the quality
+of the translations rests on them. Reviewers may review any book in the
+repository.
+
+**Who can become a reviewer.** A reviewer:
+
+- reads classical Arabic and English well enough to judge a translation;
+- has taught the book, or a book at the same level in the same discipline
+  (for *Sharḥ Mullā Jāmī*, an advanced text in *naḥw*); and
+- holds an *ijāza* in the book or the discipline, or an academic degree in
+  the field.
+
+**How to apply.**
+
+1. Create a free GitHub account at https://github.com/signup if you do not
+   have one, and turn on two-factor authentication
+   (*Settings → Password and authentication*), since reviewers can approve
+   changes to the repository.
+2. Email **souhayl@alkalam.org** with:
+   - your GitHub username and the email address of that account;
+   - your background: the books you have taught and where, your *ijāza* or
+     degree, and your reading of Arabic and English;
+   - the books or disciplines you are best placed to review.
+3. The maintainers reply. If you are accepted, you receive an invitation from
+   GitHub to join the repository with write access; accept it from the email
+   or from https://github.com/maronesy/translation/invitations. Your username
+   is then added to `.github/CODEOWNERS`.
+
+**What reviewers do.** Read [CONTRIBUTING.md](CONTRIBUTING.md) and the
+reviewer steps in [docs/MAINTAINERS.md](docs/MAINTAINERS.md). In short: check
+each pull request against the printed page — the Arabic against the photo or
+your own copy, the English for faithfulness — and the changed sheets in the
+preview PDF; then approve it, or request changes and say why. Do not approve
+your own pull requests. If a change is outside what you can judge, leave it to
+another reviewer.
 
 ## Editing pages without AI
 
