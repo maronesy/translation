@@ -30,6 +30,18 @@
 6. **Labels** — create `correction`, `confirmed`, `new-book`,
    `book-accepted`, `needs-photo`, `wontfix`.
 
+## Adding a reviewer
+
+1. Check the application (sent to souhayl@alkalam.org) against the criteria
+   in the README, "Become a reviewer": reads classical Arabic and English, has
+   taught the book or one at its level, holds an *ijāza* or degree.
+2. Invite the applicant: *Settings → Collaborators → Add people*, by GitHub
+   username, with the **Write** role.
+3. Once they accept, add their username to `.github/CODEOWNERS` by pull
+   request (`*  @maronesy @newreviewer`).
+4. To remove a reviewer, take their username out of `CODEOWNERS` and remove
+   them under *Settings → Collaborators*.
+
 ## Handling a correction issue
 
 1. Check the report against the printed edition. For an Arabic change, a
