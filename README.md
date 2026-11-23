@@ -1,5 +1,7 @@
 # Alkalam Open Translations
 
+*A project of the [Alkalam Institute](https://alkalam.org).*
+
 Arabic–English translations of classical Islamic texts, edited in the open.
 Each book is translated sentence by sentence: the Arabic as printed in a named
 edition, with the English beneath it, for both the main text (*matn*) and its
@@ -355,17 +357,26 @@ follows; contributors work from their own copies. The classical texts are in
 the public domain; a modern edition's own contributions — its typesetting,
 notes, and the selection and arrangement of glosses — may belong to its
 publisher. If you hold rights in an edition used here and object to material
-in this repository, open an issue or contact the maintainers and we will
-remove it.
+in this repository, open an issue or write to souhayl@alkalam.org and we
+will remove it.
 
-## License
+## License and credit
 
-- Translations and transcriptions (`books/`):
-  [CC BY-SA 4.0](LICENSE-CONTENT.md). Reuse them with credit; share
-  adaptations under the same license.
-- Code (`engine/`, `.github/`): [MIT](LICENSE).
+- Translations and transcriptions (`books/`): **CC BY-SA 4.0**
+  ([full text](LICENSE-CC-BY-SA-4.0.txt)). Reuse them with credit to
+  **Alkalam Open Translations — https://alkalam.org**, and share adaptations
+  under the same license.
+- Code (`engine/`, `.github/`): **MIT** ([LICENSE](LICENSE)).
 - Fonts (`engine/fonts/`): SIL Open Font License 1.1 — see
   [engine/fonts/README.md](engine/fonts/README.md).
+
+[LICENSING.md](LICENSING.md) sets out which license covers what.
+
+## Contact
+
+Questions about the project: **souhayl@alkalam.org**. Corrections and book
+proposals go through issues and pull requests, as described above.
+Participation is governed by the [Code of Conduct](CODE_OF_CONDUCT.md).
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for the review rules, and
 [docs/MAINTAINERS.md](docs/MAINTAINERS.md) for repository setup.
