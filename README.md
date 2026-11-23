@@ -252,11 +252,66 @@ none. The project does not run or pay for any AI service; you use your own.
    run `python engine/check_page.py books/<slug>`. AI tools misread dense
    Arabic, "correct" misprints silently and paraphrase; you are responsible
    for catching that.
-5. Open the pull request as usual and **say which tool you used** in the
-   pull-request template.
+5. Open the pull request as usual and **say which tool and model (with its
+   version) you used** in the pull-request template.
 
 Maintainers review AI-assisted pull requests exactly as others, and close
 pull requests that show signs of unverified machine output.
+
+### Choosing a model
+
+Not every model is up to this work. A model used here must:
+
+1. **read Arabic from images accurately**, including small, dense footnote
+   type — it needs image input, used at high resolution;
+2. **know classical Arabic and the technical vocabulary** of the science
+   concerned (here, *naḥw*);
+3. **follow instructions strictly** — keep misprints as printed, write no
+   diacritics, change only what it is asked to;
+4. if it works as an agent, **run the project's scripts and edit files**.
+
+**What was used for Mullā Jāmī:** the whole translation was made with
+**Claude Opus 5.5** (Anthropic), working in Claude Code, reading each page in
+high-resolution strips with `engine/hires_page.py`. It is the only model tested
+on this text so far. Other models are not yet tested here; that is not a
+judgement on them.
+
+**For any other model or tool:** use the provider's top tier — its largest or
+highest-reasoning model with image input, whatever it is currently called.
+Small and fast tiers (often named *mini*, *flash*, *lite*, *nano*, *haiku* or
+similar) are not recommended for transcription unless they pass the
+calibration test below. Model names and versions change every few months, so
+the project keeps no list of approved models: test before you rely on one.
+
+**Calibration test.** Before using a model on new pages, run it on pages that
+are already in the repository, without letting it see the repository's
+version, then score its output:
+
+| Scan page | Book page | Why this page |
+|---|---|---|
+| 34 | ٣٣ | dense: ten footnotes |
+| 306 | ٣٠٥ | contains a misprint (footnote ٦, «يتسعمل») that must be kept as printed |
+| 320 | ٣١٩ | misprint in footnote ٣ («لاستقالها») |
+| 339 | ٣٣٨ | misprint in the main text («متسايان») |
+
+```sh
+# the model writes its version of page 306 to /tmp/candidate_306.py, then:
+python engine/compare_page.py books/mulla-jami 306 /tmp/candidate_306.py
+```
+
+`compare_page.py` reports the Arabic word accuracy (with every differing
+word), whether the footnote markers match, whether flagged misprints were kept
+as printed or silently "corrected", and any forbidden diacritics. Read the
+English yourself against the reference. A model is fit for this work if, on
+all four pages, it reaches **at least 99% Arabic word accuracy**, matches every
+footnote marker, keeps every flagged misprint, and writes no diacritics.
+
+The reference pages were themselves made with Claude Opus 5.5 and are still
+being reviewed, so a disagreement is not automatically the candidate's error:
+check the scan, and if the repository is wrong, open a correction. Record your
+results — model, version, tool and scores — in
+[docs/MODEL-RESULTS.md](docs/MODEL-RESULTS.md) (by pull request), and name the
+model and version in the "AI tools" box of every pull request you make with it.
 
 ## Working locally
 

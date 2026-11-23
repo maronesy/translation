@@ -22,7 +22,7 @@ Fixes #
 <!-- Tick one. The "Evidence" check requires it when page files change. -->
 
 - [ ] No AI tool was used
-- [ ] An AI tool was used: <!-- which tool, and for what (transcription, translation, checking) -->
+- [ ] An AI tool was used: <!-- tool, model and version (e.g. "Claude Code, Claude Opus 5.5"), and for what (transcription, translation, checking) -->
 
 ## Checklist
 
