@@ -8,13 +8,20 @@ it, or propose a new book. Maintainers review and approve every change.
 
 ## Books
 
-| Book | Author | Status | Pages |
-|---|---|---|---|
-| [al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)](books/mulla-jami/) | ʿAbd al-Raḥmān al-Jāmī (d. 898/1492) | complete | book pp. ٢٣–٥٩٩ |
+| Book | Author | Status | Pages | Download |
+|---|---|---|---|---|
+| [al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)](books/mulla-jami/) | ʿAbd al-Raḥmān al-Jāmī (d. 898/1492) | complete | book pp. ٢٣–٥٩٩ | [PDF](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Manuscript.pdf) · [Word](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Translation.docx) · [Review notes](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Review-Notes.md) |
 
 ## Download
 
-Get the books from the [Releases page](https://github.com/maronesy/translation/releases/latest).
+The PDF and Word files are not stored among the repository's files: they are
+built automatically from the reviewed text and published on the
+[Releases page](https://github.com/maronesy/translation/releases/latest)
+(also under *Releases* in the right-hand sidebar of the repository's front
+page). The download links in the table above always point to the newest
+release. Keeping the built files out of the repository keeps it small, since
+git would otherwise keep every version of a 27 MB PDF forever.
+
 Every release has three files for each book:
 
 | File | What it is |

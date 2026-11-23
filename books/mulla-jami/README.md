@@ -1,5 +1,8 @@
 # al-Fawāʾid al-Ḍiyāʾiyya (Sharḥ Mullā Jāmī)
 
+**Download (latest release):** [Manuscript PDF](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Manuscript.pdf) ·
+[Word](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Translation.docx) · [Review notes](https://github.com/maronesy/translation/releases/latest/download/Mulla-Jami_Review-Notes.md)
+
 - **Arabic title:** الفوائد الضيائية، المشهور بملا جامي
 - **Author:** Nūr al-Dīn ʿAbd al-Raḥmān al-Jāmī (d. 898/1492). A commentary on
   *al-Kāfiya* of Ibn al-Ḥājib, on Arabic grammar (*naḥw*).
