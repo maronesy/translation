@@ -85,5 +85,5 @@ Any AI tool may be used; the project neither requires nor provides one.
 
 ## Conduct
 
-Be courteous and specific. Discuss the text, not the person. Maintainers may
-close or lock discussions that are not.
+Everyone taking part follows the [Code of Conduct](CODE_OF_CONDUCT.md)
+(Contributor Covenant 2.1). Report problems to souhayl@alkalam.org.
